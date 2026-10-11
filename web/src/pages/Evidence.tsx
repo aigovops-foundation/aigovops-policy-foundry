@@ -56,7 +56,7 @@ export default function Evidence() {
       </section>
       <div className="grid g2" style={{ alignItems: "start" }}>
         <section className="card" style={{ padding: "var(--space-2) 0" }}>
-          <div className="list" role="list">
+          <div className="list" role="group" aria-label="Receipts">
             {receipts.map((x, i) => {
               const s = result.receiptStatus[i];
               const ok = s.sigOk && s.chainOk && s.counterOk;
@@ -87,7 +87,7 @@ export default function Evidence() {
             <p className="xs muted" style={{ margin: 0 }}>
               {new Date(Number(BigInt(r.ts_ns) / 1000000n)).toLocaleString()} · key {r.key_id}
             </p>
-            <pre className="json">{JSON.stringify(r, null, 2)}</pre>
+            <pre className="json" tabIndex={0} aria-label={`Receipt #${r.counter} JSON`}>{JSON.stringify(r, null, 2)}</pre>
           </section>
         )}
       </div>
