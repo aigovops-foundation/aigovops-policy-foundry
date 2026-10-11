@@ -7,6 +7,7 @@
 - Publish the static dashboard demo to GitHub Pages with bundled demo evidence only.
 - Add a Start here role picker (shareable `#/start/<role>` links) and a Policy page that shows the plain-language policy, its rule and tests, and who approved and signed, all from the signed bundle.
 - Fix dashboard accessibility issues found by axe (receipt list semantics, keyboard-scrollable code panes, warning-pill contrast) and add social preview tags.
+- Add the 90-second demo walkthrough and dashboard demo-testing notes to foundry-build.
 - Governed four-agent policy pipeline (manager, policy writer, test verifier, compliance auditor)
   with a Rego role-boundary gate, separation-of-duties checks, signed hash-chained receipts, an
   RFC 6962 Merkle checkpoint, DSSE dual-signed bundles and an offline verifier.

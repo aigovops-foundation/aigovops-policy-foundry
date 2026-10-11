@@ -21,6 +21,11 @@
       "parent": "Home / Overview"
     },
     {
+      "title": "90-second demo walkthrough",
+      "purpose": "Guide a short offline demo through Policy, Gate, Evidence and Underwriting.",
+      "parent": "Persona paths"
+    },
+    {
       "title": "Policy and governance",
       "purpose": "Explain requirements, agents, human approvals and open decisions.",
       "parent": "Persona paths"
