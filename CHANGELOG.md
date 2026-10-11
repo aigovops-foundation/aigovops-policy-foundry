@@ -2,6 +2,7 @@
 
 ## 0.1.0 (unreleased, incubating)
 
+- Add a Start here role picker (shareable `#/start/<role>` links) and a Policy page that shows the plain-language policy, its rule and tests, and who approved and signed, all from the signed bundle.
 - Governed four-agent policy pipeline (manager, policy writer, test verifier, compliance auditor)
   with a Rego role-boundary gate, separation-of-duties checks, signed hash-chained receipts, an
   RFC 6962 Merkle checkpoint, DSSE dual-signed bundles and an offline verifier.

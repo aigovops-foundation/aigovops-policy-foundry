@@ -1,13 +1,6 @@
 import { useState } from "react";
 import { useStore } from "../lib/store";
-
-const REPO = "https://github.com/aigovops-foundation/aigovops-policy-foundry";
-
-// In the Tauri desktop/mobile apps, open links in the system browser.
-function openExternal(e: React.MouseEvent<HTMLAnchorElement>) {
-  const t = (window as any).__TAURI__;
-  if (t?.opener?.openUrl) { e.preventDefault(); t.opener.openUrl(e.currentTarget.href); }
-}
+import { openExternal, REPO } from "../lib/links";
 
 export default function Settings() {
   const { mode, apiBase, setApiBase, error, theme, toggleTheme, token, setToken } = useStore();
