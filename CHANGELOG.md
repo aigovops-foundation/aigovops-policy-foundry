@@ -2,6 +2,9 @@
 
 ## 0.1.0 (unreleased, incubating)
 
+- Add the persona wiki, DeepWiki page map, Devin review guidance and skills, macOS blueprint,
+  policy request form, and documentation link checker.
+- Publish the static dashboard demo to GitHub Pages with bundled demo evidence only.
 - Governed four-agent policy pipeline (manager, policy writer, test verifier, compliance auditor)
   with a Rego role-boundary gate, separation-of-duties checks, signed hash-chained receipts, an
   RFC 6962 Merkle checkpoint, DSSE dual-signed bundles and an offline verifier.
