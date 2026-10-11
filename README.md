@@ -36,7 +36,8 @@ Persona pages: [policy and governance](docs/wiki/Policy-and-governance.md) ·
 [low-code builders](docs/wiki/Low-code-builders.md) ·
 [pro-code developers](docs/wiki/Pro-code-developers.md) ·
 [regulators, auditors and insurers](docs/wiki/Regulators-auditors-and-insurers.md) ·
-[end users](docs/wiki/End-users.md).
+[end users](docs/wiki/End-users.md) ·
+[90-second demo walkthrough](docs/wiki/90-second-demo.md).
 
 The dashboard works fully offline with bundled demo evidence. Open **Evidence**, click **Tamper with it** on any receipt, and watch verification fail on your own device.
 

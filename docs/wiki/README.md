@@ -18,6 +18,7 @@ The evidence is a demo, not proof that a policy is correct or complete.
 
 ## A time ladder
 
+- **90 seconds:** Follow the [90-second demo walkthrough](90-second-demo.md).
 - **30 seconds:** Open the [browser demo](https://aigovops-foundation.github.io/aigovops-policy-foundry/),
   then click Evidence → **Tamper with it**.
 - **5 minutes:** Run `./scripts/demo.sh` with Docker, open `http://localhost:8000`,
@@ -32,6 +33,7 @@ initialized; this in-repository wiki is the human-written source.
 
 ## Page index
 
+- [90-second demo walkthrough](90-second-demo.md)
 - [Policy and governance](Policy-and-governance.md)
 - [Low-code builders](Low-code-builders.md)
 - [Pro-code developers](Pro-code-developers.md)
