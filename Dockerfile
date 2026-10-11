@@ -10,7 +10,7 @@ COPY web/ ./
 COPY api/foundry/assets/parity /src/api/foundry/assets/parity
 RUN npm run build
 
-FROM python:3.12-slim-bookworm AS runtime
+FROM python:3.14-slim-bookworm AS runtime
 ARG TARGETARCH
 ARG OPA_VERSION=1.21.1
 ARG OPA_SHA256_AMD64=668506eb17a2eaa1fce6cc0d1f42ef85125d4ac5bda5fc74d1152d0c77145031
