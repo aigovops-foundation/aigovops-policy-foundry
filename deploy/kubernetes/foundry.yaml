@@ -1,0 +1,54 @@
+# Any Kubernetes (EKS, GKE, AKS, OpenShift, k3s, kind). Validate: kubectl apply --dry-run=client -f foundry.yaml
+# Create the token first: kubectl -n policy-foundry create secret generic foundry-api --from-literal=token=$(openssl rand -hex 20)
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: policy-foundry
+  labels:
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: policy-foundry
+  namespace: policy-foundry
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: policy-foundry }
+  template:
+    metadata:
+      labels: { app: policy-foundry }
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile: { type: RuntimeDefault }
+      containers:
+        - name: foundry
+          image: ghcr.io/aigovops-foundation/aigovops-policy-foundry:latest
+          ports: [{ containerPort: 8000 }]
+          env:
+            - name: FOUNDRY_API_TOKEN
+              valueFrom: { secretKeyRef: { name: foundry-api, key: token } }
+          resources:
+            requests: { cpu: 100m, memory: 256Mi }
+            limits: { cpu: "1", memory: 512Mi }
+          readinessProbe: { httpGet: { path: /healthz, port: 8000 } }
+          livenessProbe: { httpGet: { path: /healthz, port: 8000 }, periodSeconds: 30 }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: [ALL] }
+          volumeMounts: [{ name: tmp, mountPath: /tmp }]
+      volumes: [{ name: tmp, emptyDir: {} }]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: policy-foundry
+  namespace: policy-foundry
+spec:
+  selector: { app: policy-foundry }
+  ports: [{ port: 80, targetPort: 8000 }]

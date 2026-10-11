@@ -4,7 +4,7 @@
 
 Version 0.1 draft, 11 October 2026. Prepared for: AI governance, platform engineering, OT security, enterprise risk, and insurance stakeholders at a manufacturer (called "Acme Manufacturing" here).
 
-Status: design blueprint with a tested reference kit. Nothing here has been deployed to a Devin tenant or AWS account. Section 15 lists what this design does not prove.
+Status: design blueprint for the open-source AiGovOps Policy Foundry (incubating). The reference implementation in this repository is tested in CI; nothing has been deployed to a production Devin tenant or AWS account. Section 15 lists what this design does not prove. Paths below are relative to the repository root.
 
 ---
 
@@ -49,7 +49,7 @@ Three things make the system trustworthy rather than merely automated:
 - Test-first independence. The verifier's acceptance tests are committed and receipted before the writer's draft is visible, so tests cannot be shaped to fit the policy.
 - Human-only authority. Approval needs two distinct authorized humans, neither of whom is the requester. A third human, the signing officer, signs with a KMS key gated by MFA. No agent holds approve or sign rights; the gate escalates those requests to people.
 
-The reference kit runs end to end on a laptop: 22 of 22 gate policy tests pass, 10 of 10 acceptance tests pass on the example policy with 100% rule coverage and 7 of 7 mutants killed, 50 of 50 evidence tests pass (including tamper detection), the Terraform validates against the current AWS provider, and the produced bundle verifies offline.
+The reference implementation runs end to end on a laptop: 25 of 25 gate policy tests pass, 10 of 10 acceptance tests pass on the example policy with 100% rule coverage and 7 of 7 mutants killed, 1,101 Python tests pass (evidence, tamper detection, a 1,033-case gate parity corpus, API end to end), the Terraform validates, and the produced bundle verifies offline in Python and in the browser.
 
 ---
 
@@ -189,7 +189,7 @@ Note on AAL naming. The OVERT 1.0 standard defines AAL-3 as operator-controlled 
 
 ## 5. Agent roles and boundaries
 
-The full manifest lives in `config/agents.yaml`; the enforcing gate is `policy/role_boundaries.rego`. Summary:
+The full manifest lives in `api/foundry/assets/config/agents.yaml`; the enforcing gate is `api/foundry/assets/policy/role_boundaries.rego`. Summary:
 
 ### 5.1 Manager
 
@@ -244,7 +244,7 @@ The full manifest lives in `config/agents.yaml`; the enforcing gate is `policy/r
 
 ## 6. System prompt templates
 
-Full templates are in `prompts/`. Each template is a registered prompt artifact: its SHA-256 is bound into the `session_open` receipt, and editing one requires a two-person policy-approval receipt (OVERT STATE-2, HITL-4.1).
+Full templates are in `api/foundry/assets/prompts/`. Each template is a registered prompt artifact: its SHA-256 is bound into the `session_open` receipt, and editing one requires a two-person policy-approval receipt (OVERT STATE-2, HITL-4.1).
 
 ### 6.1 Shared preamble (all agents)
 
@@ -580,7 +580,7 @@ KMS key policies deny `kms:Sign` to every agent role. Agents can request a signa
 
 ### 11.2 Envelope
 
-- Format: DSSE v1 wrapping an in-toto Statement v1 with predicate type `https://aigovops.foundation/foundry/policy-artifact/v0.1` (proposed; schema in `schemas/policy-artifact-predicate.schema.json`).
+- Format: DSSE v1 wrapping an in-toto Statement v1 with predicate type `https://aigovops.foundation/foundry/policy-artifact/v0.1` (proposed; schema in `api/foundry/assets/schemas/policy-artifact-predicate.schema.json`).
 - Subjects: every artifact by SHA-256.
 - Predicate: request ID, policy ID and version, previous policy digest, requirement IDs, verifier results (coverage, mutation, vectors digest), auditor recommendation, approvals as identity commitments, receipt-log reference, signing algorithms, and a scope statement saying signatures do not prove correctness or legal compliance.
 - Signatures: production uses Ed25519 and ML-DSA-65 on the same pre-authentication encoding. The in-toto envelope spec requires support for multiple signatures in one envelope ([in-toto](https://github.com/in-toto/attestation/blob/main/spec/v1/envelope.md)), which this design uses for 2-of-N thresholds and hybrid algorithms.
@@ -756,19 +756,25 @@ The packet states that pillar scores are self-assessed control coverage, not AIU
 
 ---
 
-## 17. Reference kit and test results
+## 17. Reference implementation and test results
 
-All results below come from runs on 11 October 2026 in a sandbox with OPA 1.21.1, Python 3.14 (cryptography 50.0.2), and Terraform 1.16.5.
+The repository implements this blueprint as a dashboard, API, desktop and mobile apps, with CI
+running every check below on each pull request (OPA 1.21.1, Python 3.12, Node 22, Terraform).
 
 | Check | Result |
 |---|---|
-| Gate policy unit tests (`opa test policy/ config/agents.yaml`) | 22 of 22 pass |
+| Gate policy unit tests (`opa test policy/ config/agents.yaml`) | 25 of 25 pass |
+| Gate parity (OPA vs Python vs TypeScript) | 1,005 decision cases and 28 approval sets identical |
 | Example policy vs verifier acceptance vectors | 10 of 10 pass; coverage 100% (10000 bp) |
 | Mutation analysis (delete each violation rule) | 7 of 7 mutants killed |
-| Evidence library and bundle tests (`pytest tests`) | 50 of 50 pass: JCS ordering, float rejection, keyed commitments, chain edit/drop detection, RFC 6962 inclusion for tree sizes 1–32, DSSE threshold, KMS size guard, four bundle tamper cases |
-| End-to-end pipeline | 20 signed receipts; DSSE 2-of-2 valid; witness-signed checkpoint; inclusion proof for `bundle_signed` |
-| Offline verifier on produced bundle | `foundry-verify: OK` |
-| Terraform (`terraform validate`) | Valid |
+| Python suite (`cd api && pytest`) | 1,101 pass with OPA; 1,100 pass + 1 skipped without OPA |
+| TypeScript suite (`cd web && npm test`) | 11 pass, including verifying the Python-built bundle and tamper cases |
+| End-to-end pipeline | 20 signed receipts; DSSE 2-of-2; witness-signed checkpoint; inclusion proof |
+| Terraform validate | GCP, Azure, AWS deploy targets and the PrivateLink design |
+
+The parity corpus found a fail-open defect in an earlier draft of the gate: a delegation request
+without `parent_scope` was allowed. The Rego now resolves missing fields with `object.get` defaults
+so the gate fails closed, with regression tests.
 
 Gate decisions from the end-to-end run:
 
@@ -787,23 +793,5 @@ approval: requester self-approves                                     -> rejecte
 approval: two authorized approvers, separate signer                   -> ok
 ```
 
-### 17.1 Kit contents
-
-```
-BLUEPRINT.md                         this document
-README.md                            how to run
-config/agents.yaml                   role manifest (source of truth)
-policy/role_boundaries.rego          Beacon gate policy
-policy/role_boundaries_test.rego     22 tests
-prompts/00..04-*.md                  system prompt templates
-schemas/*.schema.json                Devin structured outputs, auditor findings, receipt,
-                                     policy-artifact predicate, underwriting packet
-reference/foundry_evidence.py        JCS, commitments, receipt chain, RFC 6962 Merkle, DSSE
-reference/devin_client.py            Devin v3 adapter (dry-run by default)
-reference/pipeline.py                end-to-end simulation
-reference/verify_bundle.py           offline verifier shipped in bundles
-examples/req-1042/                   example policy, vectors, plain-language doc, auditor output
-infra/privatelink/main.tf            PrivateLink conduits, AWS endpoints, egress allowlist
-tests/test_evidence.py               50 tests
-out/bundle-REQ-1042/                 a produced, verifiable bundle
-```
+See the repository README for the layout, `docs/HOSTING.md` for deployment, and `DEVIN.md` for
+the build plan.

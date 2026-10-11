@@ -55,6 +55,8 @@ def run():
 
 def test_run_and_bundle_verify(run):
     assert run["verdict"] == "pass" and run["receipts"] == 20
+    # the dashboard needs these straight from POST /api/runs
+    assert {"tests", "coverage_bp", "mutation", "events"} <= set(run) and run["mutation"] == "7/7"
     b = c.get(f"/api/runs/{run['id']}/bundle.json").json()
     v = c.post("/api/verify", json=b).json()
     assert v["ok"], v
@@ -96,3 +98,8 @@ def test_devin_preview_is_dry_run():
     p = r["payload"]
     assert r["dry_run"] and p["bypass_approval"] is False and p["resumable"] is False
     assert "create_as_user_id" not in p and "{{" not in p["prompt"]
+
+
+def test_cache_headers():
+    assert c.get("/api/meta").headers["cache-control"] == "no-store"
+    assert c.get("/healthz").headers["cache-control"] == "no-cache"

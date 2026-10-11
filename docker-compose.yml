@@ -1,0 +1,18 @@
+# Local demo on macOS, Windows or Linux (Docker Desktop, Podman, OrbStack, Rancher Desktop).
+#   docker compose up --build      -> http://localhost:8000
+# Uses the published image if present, otherwise builds locally.
+services:
+  foundry:
+    image: ghcr.io/aigovops-foundation/aigovops-policy-foundry:${FOUNDRY_TAG:-latest}
+    build: .
+    pull_policy: missing
+    ports:
+      - "127.0.0.1:${FOUNDRY_PORT:-8000}:8000"   # loopback only: demo, not a server
+    environment:
+      FOUNDRY_API_TOKEN: ${FOUNDRY_API_TOKEN:-}
+      FOUNDRY_CORS_ORIGINS: ${FOUNDRY_CORS_ORIGINS:-*}
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped

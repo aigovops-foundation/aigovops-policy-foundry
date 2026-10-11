@@ -60,7 +60,14 @@ async def security_headers(request: Request, call_next):
     resp = await call_next(request)
     resp.headers.setdefault("X-Content-Type-Options", "nosniff")
     resp.headers.setdefault("Referrer-Policy", "no-referrer")
-    resp.headers.setdefault("Cache-Control", "no-store" if request.url.path.startswith("/api") else "public, max-age=300")
+    path = request.url.path
+    if path.startswith("/api"):
+        cache = "no-store"
+    elif path.startswith("/assets/"):
+        cache = "public, max-age=31536000, immutable"  # content-hashed by Vite
+    else:
+        cache = "no-cache"  # index.html and demo data: always revalidate after a deploy
+    resp.headers.setdefault("Cache-Control", cache)
     return resp
 
 
@@ -185,8 +192,8 @@ def _new_run() -> tuple[str, dict]:
 @app.post("/api/runs", dependencies=[Depends(require_token)], status_code=201)
 async def create_run() -> dict:
     async with RUN_LOCK:
-        rid, entry = await asyncio.to_thread(_new_run)
-    return _summary(rid, entry) | {"events": entry["summary"]["events"]}
+        rid, _ = await asyncio.to_thread(_new_run)
+    return get_run(rid)
 
 
 @app.get("/api/runs")

@@ -1,0 +1,8 @@
+Specifications and documentation in this repository (docs/, *.md files, prompts/ templates and
+JSON schemas under api/foundry/assets/schemas/) are licensed under the Creative Commons Attribution
+4.0 International License (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution: "AiGovOps Policy Foundry, AiGovOps Foundation,
+https://github.com/aigovops-foundation/aigovops-policy-foundry".
+
+Source code is licensed under the Apache License 2.0 (see LICENSE).

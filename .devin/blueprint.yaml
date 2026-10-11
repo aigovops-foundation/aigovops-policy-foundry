@@ -1,0 +1,43 @@
+# Git-backed Devin environment blueprint for this repo. Sync it from Settings > Environment > Blueprints.
+initialize:
+  - name: "Install OPA 1.21.1 (checksum-verified)"
+    run: |
+      arch=$(uname -m); case "$arch" in x86_64) a=amd64; s=668506eb17a2eaa1fce6cc0d1f42ef85125d4ac5bda5fc74d1152d0c77145031;; aarch64|arm64) a=arm64; s=9a1f3625529c6f01240fe68286dde06aa0b23c5253da700ac48f4d943ff8a4de;; esac
+      curl -fsSL -o /tmp/opa "https://github.com/open-policy-agent/opa/releases/download/v1.21.1/opa_linux_${a}_static"
+      echo "$s  /tmp/opa" | sha256sum -c - && sudo install -m 0755 /tmp/opa /usr/local/bin/opa
+  - name: "Install Terraform (for deploy validation)"
+    run: |
+      curl -fsSL -o /tmp/tf.zip https://releases.hashicorp.com/terraform/1.16.5/terraform_1.16.5_linux_amd64.zip
+      cd /tmp && unzip -o -q tf.zip && sudo install -m 0755 terraform /usr/local/bin/terraform
+  - name: "Install Rust and Tauri Linux prerequisites (native apps)"
+    run: |
+      curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
+      sudo apt-get update && sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+maintenance:
+  - name: "Python API dependencies"
+    run: python3 -m pip install -e "api[dev]"
+  - name: "Dashboard dependencies"
+    run: cd web && npm ci --no-audit --no-fund
+  - name: "Native shell dependencies"
+    run: cd apps/native && npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+knowledge:
+  - name: read-first
+    contents: |
+      Read DEVIN.md at the repo root before changing anything. It has the build plan, guardrails,
+      and the definition of done. Never weaken the gate policy to make a test pass.
+  - name: test
+    contents: |
+      cd api && pytest -q                                   # 1,101 tests incl. gate parity
+      cd api/foundry/assets && opa test policy/ config/agents.yaml -v
+      python3 scripts/gen_parity.py --check                 # OPA golden still current
+      cd web && npm test
+  - name: build
+    contents: |
+      cd web && npm run build                               # dashboard -> web/dist
+      docker build -t policy-foundry .                      # API + dashboard + OPA
+      cd apps/native && npx tauri build                     # desktop app for this OS
+  - name: dev-server
+    contents: |
+      cd api && OPA_BIN=$(which opa) FOUNDRY_WEB_DIST=../web/dist uvicorn app.main:app --reload --port 8000
+      cd web && npm run dev                                 # http://localhost:5173 (proxies /api to :8000)
+      API docs: http://localhost:8000/docs

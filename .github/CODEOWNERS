@@ -1,0 +1,5 @@
+# Maintainers review everything. Gate policy, evidence code and governance docs need a maintainer.
+*                                   @bobrapp
+/api/foundry/assets/policy/         @bobrapp
+/api/foundry/evidence.py            @bobrapp
+/GOVERNANCE.md                      @bobrapp

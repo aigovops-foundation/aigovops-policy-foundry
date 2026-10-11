@@ -1,0 +1,27 @@
+[package]
+name = "policy-foundry"
+version = "0.1.0"
+description = "AiGovOps Policy Foundry desktop and mobile app"
+authors = ["AiGovOps Foundation contributors"]
+license = "Apache-2.0"
+repository = "https://github.com/aigovops-foundation/aigovops-policy-foundry"
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "policy_foundry_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

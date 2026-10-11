@@ -1,0 +1,19 @@
+{
+  "name": "aigovops-policy-foundry-native",
+  "private": true,
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "scripts": {
+    "tauri": "tauri",
+    "icons": "tauri icon app-icon.png",
+    "dev": "tauri dev",
+    "build:desktop": "tauri build",
+    "android:init": "tauri android init --ci",
+    "android:build": "tauri android build --apk",
+    "ios:init": "tauri ios init --ci",
+    "ios:build": "tauri ios build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.2"
+  }
+}

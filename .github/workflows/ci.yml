@@ -1,0 +1,122 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  policy:
+    name: policy (OPA tests + parity golden)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: open-policy-agent/setup-opa@b2b258e089860efaadaaf71bf6e3aecb4a3eeff1 # v2.4.0
+        with:
+          version: 1.21.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Format, check, test
+        working-directory: api/foundry/assets
+        run: |
+          opa fmt --list --fail policy/
+          opa check --strict policy/
+          opa test policy/ config/agents.yaml -v
+          opa test examples/req-1042/ --coverage --threshold 100 > /dev/null
+      - name: Parity golden still matches OPA
+        run: python3 scripts/gen_parity.py --check
+
+  api:
+    name: api (pytest, with and without OPA)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: open-policy-agent/setup-opa@b2b258e089860efaadaaf71bf6e3aecb4a3eeff1 # v2.4.0
+        with:
+          version: 1.21.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - run: pip install -e "api[dev]"
+      - name: pytest (OPA engine)
+        working-directory: api
+        run: pytest -q
+      - name: pytest (Python engine, recorded verifier)
+        working-directory: api
+        env:
+          OPA_BIN: /nonexistent
+        run: pytest -q
+      - name: Recorded verifier output matches a fresh OPA run
+        working-directory: api
+        run: |
+          foundry-demo --out /tmp/b --engine opa > /dev/null
+          python3 - <<'PY'
+          import json
+          rec = json.load(open("foundry/assets/examples/req-1042/recorded_verifier.json"))
+          v = json.load(open("/tmp/b/artifacts/reports/verifier.json"))
+          assert v["results"] == rec["results"] and v["coverage_bp"] == rec["coverage_bp"], "recorded_verifier.json is stale"
+          assert v["mutation_score_bp"] == rec["mutation_killed"] * 10000 // rec["mutation_total"], "mutation drift"
+          print("recorded verifier output is current")
+          PY
+          foundry-verify /tmp/b
+
+  web:
+    name: web (vitest + build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - working-directory: web
+        run: |
+          npm ci --no-audit --no-fund
+          npm test
+          npm run build
+
+  terraform:
+    name: terraform validate (${{ matrix.dir }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dir: [deploy/gcp, deploy/azure, deploy/aws, infra/privatelink]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
+      - working-directory: ${{ matrix.dir }}
+        run: |
+          terraform fmt -check -diff
+          terraform init -backend=false -input=false
+          terraform validate
+
+  container:
+    name: container (build + smoke test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: docker build -t policy-foundry:ci .
+      - name: Smoke test
+        run: |
+          docker run -d --name pf -p 8000:8000 --read-only --tmpfs /tmp --cap-drop ALL policy-foundry:ci
+          for i in $(seq 1 30); do curl -fsS localhost:8000/healthz && break; sleep 1; done
+          curl -fsS localhost:8000/api/meta | tee /dev/stderr | grep -q '"gate_engine":"opa"'
+          curl -fsS localhost:8000/ | grep -q '<div id="root">'
+          id=$(curl -fsS -X POST localhost:8000/api/runs | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["verdict"]=="pass" and d["verifier_engine"]=="opa", d; print(d["id"])')
+          curl -fsS localhost:8000/api/runs/$id/bundle.json > b.json
+          curl -fsS -X POST -H 'Content-Type: application/json' --data @b.json localhost:8000/api/verify | grep -q '"ok":true'
+          curl -fsS -o b.zip localhost:8000/api/runs/$id/bundle.zip && unzip -q b.zip -d z && (cd z/* && python3 -c 'import cryptography' 2>/dev/null || pip install -q cryptography) && (cd z/* && python3 verify_bundle.py .)
+      - if: failure()
+        run: docker logs pf || true

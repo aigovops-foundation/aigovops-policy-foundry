@@ -1,0 +1,20 @@
+AiGovOps Policy Foundry
+Copyright 2026 AiGovOps Foundation contributors.
+
+AiGovOps Foundation incubation project. Code under Apache-2.0 (LICENSE); specifications and
+documentation under CC BY 4.0 (LICENSE-DOCS).
+
+Devin and Cognition are trademarks of Cognition AI, Inc. OVERT and Glacis are property of Glacis
+Technologies. AIUC-1 is a mark of the Artificial Intelligence Underwriting Company. AWS, Amazon Web
+Services and AWS PrivateLink are trademarks of Amazon.com, Inc. or its affiliates. Google Cloud and
+Cloud Run are trademarks of Google LLC. Microsoft Azure is a trademark of Microsoft Corporation.
+Open Policy Agent (OPA) is a CNCF project. Tauri is a project of the Tauri Programme within The
+Commons Conservancy. ISO/IEC 42001, IEC 62443, IEC 61508 and ISO 26262 are standards of ISO and IEC.
+Naming or mapping to any of these indicates proposed interoperation only, not affiliation,
+endorsement, certification, adoption or executed membership.
+
+"Acme Manufacturing", the people (Patel, Alvarez, Chen, Okafor) and REQ-1042 are fictional examples.
+
+Third-party components keep their own licenses: React and wouter (MIT), @noble/ed25519 and
+@noble/hashes (MIT), Geist fonts (SIL OFL 1.1), lucide-react (ISC), FastAPI (MIT), cryptography
+(Apache-2.0 OR BSD-3-Clause), PyYAML (MIT), jsonschema (MIT), OPA (Apache-2.0), Tauri (Apache-2.0 OR MIT).

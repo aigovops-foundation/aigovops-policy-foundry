@@ -1,0 +1,8 @@
+**/node_modules
+**/dist
+**/__pycache__
+**/.pytest_cache
+**/.terraform
+apps/native/src-tauri/target
+out
+.git

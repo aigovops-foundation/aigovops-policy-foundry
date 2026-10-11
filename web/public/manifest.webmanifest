@@ -1,0 +1,11 @@
+{
+  "name": "AiGovOps Policy Foundry",
+  "short_name": "Policy Foundry",
+  "description": "Governed multi-agent policy generation with verifiable, signed evidence.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#14172b",
+  "theme_color": "#3b3fb5",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
