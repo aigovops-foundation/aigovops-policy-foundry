@@ -150,6 +150,7 @@ Follow `RELEASING.md`. Prepare the release PR and stop for Review Circle sign-of
 - [ ] If the UI changed: screenshots at 1440×900 and 390×844, light and dark, attached to the PR.
 - [ ] No new network calls from the dashboard except to the configured Foundry API.
 - [ ] No secrets, no certification language, no OT targets.
+- [ ] `docs/wiki/` updated if user-facing behavior changed.
 - [ ] `CHANGELOG.md` updated.
 
 ## 8. UX principles (keep it simple and compelling)
@@ -172,3 +173,10 @@ cd api && uvicorn app.main:app --reload    # http://localhost:8000/docs
 cd web && npm run dev                      # http://localhost:5173
 docker compose up --build                  # http://localhost:8000
 ```
+
+## 10. Devin surfaces in this repo
+
+Use [the persona wiki's Devin surface map](docs/wiki/Devin-across-surfaces.md)
+to find `AGENTS.md`, this build guide, `REVIEW.md`, the blueprint, DeepWiki map,
+skills and product-side Devin integration. The human-written persona source is
+`docs/wiki/`; update it when user-facing behavior changes.
