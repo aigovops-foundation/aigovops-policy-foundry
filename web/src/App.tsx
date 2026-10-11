@@ -86,7 +86,7 @@ function Shell() {
             <button className="btn" onClick={restore}>Restore original</button>
           </div>
         )}
-        <main className="content" id="main">
+        <main className="content" id="main" tabIndex={0}>
           <Switch>
             <Route path="/" component={Overview} />
             <Route path="/start/:role" component={Overview} />

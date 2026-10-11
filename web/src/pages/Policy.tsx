@@ -193,7 +193,7 @@ export default function Policy() {
               {run.tests.passed}/{run.tests.passed + run.tests.failed} pass · written from the requirement before the draft
             </p>
           )}
-          <pre className="json">{source === "rego" ? rego : testsFile}</pre>
+          <pre className="json" tabIndex={0} aria-label={source === "rego" ? "Rule source" : "Tests source"}>{source === "rego" ? rego : testsFile}</pre>
         </div>
       </section>
     </div>
