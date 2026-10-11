@@ -1,8 +1,11 @@
-import { Link } from "wouter";
-import { Check, X, Play, ShieldAlert, ArrowRight, Loader2 } from "lucide-react";
+import { useRef } from "react";
+import { Link, useLocation } from "wouter";
+import { Check, X, Play, ShieldAlert, ArrowRight, Loader2, ChevronRight, ExternalLink } from "lucide-react";
 import { useStore, type GateEvent } from "../lib/store";
 import type { Receipt } from "../lib/evidence";
 import { explain } from "../lib/gate";
+import { openExternal } from "../lib/links";
+import { isRole, ROLES, TOUR } from "../lib/roles";
 
 const STEPS: { label: string; find: (r: Receipt) => boolean; detail: (r: Receipt) => string }[] = [
   { label: "Request", find: (r) => r.type === "session_open", detail: () => "Signed requirement" },
@@ -15,7 +18,12 @@ const STEPS: { label: string; find: (r: Receipt) => boolean; detail: (r: Receipt
 ];
 
 export default function Overview() {
-  const { result, run, mode, newRun, busy, error } = useStore();
+  const { result, run, mode, newRun, busy, error, visited } = useStore();
+  const [loc] = useLocation();
+  const startRef = useRef<HTMLElement | null>(null);
+  const roleId = loc.startsWith("/start/") ? loc.slice("/start/".length).split("/")[0] : undefined;
+  const selectedRole = isRole(roleId) ? ROLES.find((role) => role.id === roleId) : undefined;
+  const steps = selectedRole?.steps ?? TOUR;
   if (!result || !run) return <div className="page"><div className="card skeleton" style={{ height: 220 }} /></div>;
 
   const status = new Map(result.receiptStatus.map((s) => [s.counter, s.sigOk && s.chainOk && s.counterOk]));
@@ -24,9 +32,66 @@ export default function Overview() {
   const verifiedCount = result.receiptStatus.filter((s) => s.sigOk && s.chainOk && s.counterOk).length;
   const sigCheck = result.checks.find((c) => c.name === "statement");
   const [killed, total] = run.mutation.split("/");
+  const focusStart = () => {
+    const section = startRef.current;
+    if (!section) return;
+    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    section.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+    section.focus({ preventScroll: true });
+  };
 
   return (
     <div className="page">
+      <section className="card" id="start" tabIndex={-1} aria-labelledby="start-h" ref={startRef}>
+        <div className="row" style={{ justifyContent: "space-between", alignItems: "flex-start" }}>
+          <div>
+            <h2 id="start-h">Start here</h2>
+            <p className="sub">Pick the one that sounds like you. Three steps, about two minutes.</p>
+          </div>
+          {selectedRole && <Link className="small" href="/">Clear</Link>}
+        </div>
+        <div className="role-chips" aria-label="Choose your role">
+          {ROLES.map((role) => (
+            <Link
+              key={role.id}
+              className="chip"
+              href={`/start/${role.id}`}
+              aria-current={selectedRole?.id === role.id ? "true" : undefined}
+            >
+              {role.label}
+            </Link>
+          ))}
+        </div>
+        {selectedRole && <p className="muted small role-who">{selectedRole.who}</p>}
+        <h3 className="tour-heading">{selectedRole ? `${selectedRole.label} path` : "Quick tour"}</h3>
+        <ol className="checklist">
+          {steps.map((step, index) => {
+            const done = !step.external && visited.has(step.to);
+            const contents = (
+              <>
+                <span className={`checklist-number${done ? " is-done" : ""}`}>
+                  {done ? <><Check size={16} aria-hidden /><span className="sr-only">done</span></> : index + 1}
+                </span>
+                <span className="checklist-copy">
+                  <span className="checklist-label">{step.label}</span>
+                  <span className="checklist-hint">{step.hint}</span>
+                </span>
+                {step.external
+                  ? <><ExternalLink size={16} aria-hidden /><span className="sr-only">(opens GitHub)</span></>
+                  : <ChevronRight size={18} aria-hidden />}
+              </>
+            );
+            return (
+              <li key={`${step.to}-${step.label}`}>
+                {step.external
+                  ? <a className="checklist-link" href={step.to} target="_blank" rel="noreferrer" onClick={openExternal}>{contents}</a>
+                  : <Link className="checklist-link" href={step.to}>{contents}</Link>}
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+
       <section className="card">
         <div className="row" style={{ justifyContent: "space-between", alignItems: "flex-start", gap: "var(--space-4)" }}>
           <div className="stack" style={{ gap: "var(--space-2)", maxWidth: 640 }}>
@@ -43,7 +108,7 @@ export default function Overview() {
                 {busy ? <Loader2 size={16} className="spin" /> : <Play size={16} />} {busy ? "Running…" : "Run pipeline"}
               </button>
             ) : (
-              <Link href="/settings" className="btn">Connect an API</Link>
+              <button className="btn primary" onClick={focusStart}>Take the 2-minute tour</button>
             )}
             <Link href="/verify" className="btn">Verify bundle <ArrowRight size={16} /></Link>
           </div>

@@ -1,7 +1,8 @@
 import { Link } from "wouter";
-import { Activity, Users, Settings as Cog, ChevronRight } from "lucide-react";
+import { Activity, FileText, Users, Settings as Cog, ChevronRight } from "lucide-react";
 
 const ITEMS = [
+  { to: "/policy", label: "Policy", hint: "Plain-language policy, rule and tests", Icon: FileText },
   { to: "/underwriting", label: "Underwriting", hint: "Evidence packet for insurers", Icon: Activity },
   { to: "/agents", label: "Agents", hint: "Roles, rights and limits", Icon: Users },
   { to: "/settings", label: "Settings", hint: "API connection, appearance, about", Icon: Cog },

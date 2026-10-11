@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { Link, Route, Router, Switch, useLocation } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
-import { Activity, BadgeCheck, Gauge, Menu, Moon, Settings as Cog, ShieldHalf, Sun, Users, Receipt, FileCheck2 } from "lucide-react";
+import { Activity, BadgeCheck, FileText, Gauge, Menu, Moon, Settings as Cog, ShieldHalf, Sun, Users, Receipt, FileCheck2 } from "lucide-react";
 import { useStore } from "./lib/store";
 import Overview from "./pages/Overview";
+import Policy from "./pages/Policy";
 import Gate from "./pages/Gate";
 import Evidence from "./pages/Evidence";
 import Verify from "./pages/Verify";
@@ -24,6 +26,7 @@ export function Logo({ size = 28 }: { size?: number }) {
 
 const NAV = [
   { to: "/", label: "Overview", icon: Gauge },
+  { to: "/policy", label: "Policy", icon: FileText },
   { to: "/gate", label: "Gate", icon: ShieldHalf },
   { to: "/evidence", label: "Evidence", icon: Receipt },
   { to: "/verify", label: "Verify", icon: FileCheck2 },
@@ -31,12 +34,15 @@ const NAV = [
   { to: "/agents", label: "Agents", icon: Users },
   { to: "/settings", label: "Settings", icon: Cog },
 ];
-const TABS = [NAV[0], NAV[1], NAV[2], NAV[3], { to: "/more", label: "More", icon: Menu }];
+const TABS = [NAV[0], NAV[2], NAV[3], NAV[4], { to: "/more", label: "More", icon: Menu }];
 const TITLES: Record<string, string> = Object.fromEntries([...NAV, TABS[4]].map((n) => [n.to, n.label]));
+TITLES["/start"] = "Overview";
 
 function NavLink({ to, label, Icon, compact }: { to: string; label: string; Icon: typeof Gauge; compact?: boolean }) {
   const [loc] = useLocation();
-  const active = to === "/" ? loc === "/" : loc.startsWith(to) || (to === "/more" && ["/underwriting", "/agents", "/settings"].some((p) => loc.startsWith(p)));
+  const active = to === "/"
+    ? loc === "/" || loc.startsWith("/start/")
+    : loc.startsWith(to) || (to === "/more" && ["/policy", "/underwriting", "/agents", "/settings"].some((p) => loc.startsWith(p)));
   return (
     <Link href={to} aria-current={active ? "page" : undefined}>
       <Icon size={compact ? 20 : 18} aria-hidden /> <span>{label}</span>
@@ -45,8 +51,9 @@ function NavLink({ to, label, Icon, compact }: { to: string; label: string; Icon
 }
 
 function Shell() {
-  const { mode, theme, toggleTheme, result, tampered, restore } = useStore();
+  const { mode, theme, toggleTheme, result, tampered, restore, recordVisit } = useStore();
   const [loc] = useLocation();
+  useEffect(() => { recordVisit(loc); }, [loc, recordVisit]);
   const title = TITLES[loc] ?? TITLES["/" + loc.split("/")[1]] ?? "Policy Foundry";
   return (
     <div className="shell">
@@ -82,6 +89,8 @@ function Shell() {
         <main className="content" id="main">
           <Switch>
             <Route path="/" component={Overview} />
+            <Route path="/start/:role" component={Overview} />
+            <Route path="/policy" component={Policy} />
             <Route path="/gate" component={Gate} />
             <Route path="/evidence" component={Evidence} />
             <Route path="/verify" component={Verify} />

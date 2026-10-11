@@ -15,6 +15,7 @@ type Store = {
   token: string; setToken: (t: string) => void;
   manifest: Manifest | null; run: RunSummary | null; bundle: Bundle | null; result: VerifyResult | null;
   runId: string | null; busy: boolean; error: string | null;
+  visited: Set<string>; recordVisit: (location: string) => void;
   loadBundle: (b: Bundle, run?: RunSummary | null) => void;
   tamperWith: (b: Bundle) => void; restore: () => void; tampered: boolean;
   newRun: () => Promise<void>;
@@ -60,10 +61,19 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [runId, setRunId] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [visited, setVisited] = useState<Set<string>>(() => new Set());
   const [theme, setTheme] = useState<"light" | "dark">(() =>
     typeof window !== "undefined" && window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
   useEffect(() => { document.documentElement.dataset.theme = theme; }, [theme]);
+  const recordVisit = useCallback((location: string) => {
+    setVisited((current) => {
+      if (current.has(location)) return current;
+      const next = new Set(current);
+      next.add(location);
+      return next;
+    });
+  }, []);
 
   const loadBundle = useCallback((b: Bundle, r?: RunSummary | null) => {
     setBundle(b);
@@ -123,10 +133,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   }, [mode, apiBase, token, loadBundle]);
 
   const value = useMemo<Store>(() => ({
-    mode, apiBase, setApiBase, token, setToken, manifest, run, bundle, result, runId, busy, error, loadBundle, newRun,
+    mode, apiBase, setApiBase, token, setToken, manifest, run, bundle, result, runId, busy, error, visited, recordVisit, loadBundle, newRun,
     tamperWith, restore, tampered: pristine !== null,
     theme, toggleTheme: () => setTheme((t) => (t === "dark" ? "light" : "dark")),
-  }), [mode, apiBase, setApiBase, token, manifest, run, bundle, result, runId, busy, error, loadBundle, newRun, tamperWith, restore, pristine, theme]);
+  }), [mode, apiBase, setApiBase, token, manifest, run, bundle, result, runId, busy, error, visited, recordVisit, loadBundle, newRun, tamperWith, restore, pristine, theme]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
