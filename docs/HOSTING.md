@@ -12,6 +12,7 @@ One container image runs everything: API, dashboard and OPA. Pick a target below
 | [Fly.io / any container host](#flyio-or-any-container-host) | Render, Railway, Koyeb, DigitalOcean, Fly | 10 minutes | |
 | [Hosted by Devin](#hosted-by-devin) | Fastest public preview from a Devin session | 5 minutes | |
 | [Static dashboard only](#static-dashboard-only) | GitHub Pages, Netlify, Vercel, S3, any CDN | 5 minutes | |
+| [GitHub Pages (static demo)](#github-pages-static-demo) | Public offline exploration of bundled demo evidence | No install | Public demo |
 
 Security defaults for every non-local target: set `FOUNDRY_API_TOKEN` from a secret store, keep the
 service private unless it is an intentional public demo, and never set `FOUNDRY_DEVIN_LIVE=1`.
@@ -127,6 +128,16 @@ cd web && npm ci && npm run build      # upload web/dist to any static host
 VITE_API_BASE=https://foundry.example.com npm run build
 ```
 Users can also connect an API at runtime from Settings.
+
+## GitHub Pages (static demo)
+
+Open the [public browser demo](https://aigovops-foundation.github.io/aigovops-policy-foundry/).
+This public demo was approved by the maintainer and contains bundled demo data only.
+It is a static dashboard with on-device verification; no data leaves your device.
+
+The `pages.yml` workflow builds and publishes `web/dist` to GitHub Pages when changes
+to `web/` merge to `main`. A maintainer must set **Settings → Pages → Source** to
+**GitHub Actions** once.
 
 ## Desktop and mobile apps
 

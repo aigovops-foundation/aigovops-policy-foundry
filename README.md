@@ -23,6 +23,7 @@ A **gate** checks every action that crosses a system boundary and writes a signe
 
 | You want to... | Do this |
 |---|---|
+| Try it in your browser (no install) | Open the [offline demo](https://aigovops-foundation.github.io/aigovops-policy-foundry/) (static, bundled demo evidence; no data leaves your device) |
 | Find the path for your role | Start at [docs/wiki](docs/wiki/README.md) |
 | See it on your laptop (Mac, Windows, Linux) | `./scripts/demo.sh` or `scripts\demo.ps1` (Docker Desktop or Podman), then open http://localhost:8000 |
 | Deploy to the cloud | Google Cloud Run (default), Azure Container Apps or AWS ECS Fargate: see [docs/HOSTING.md](docs/HOSTING.md) |

@@ -27,8 +27,10 @@ policy is correct or complete.
 
 ## Explore the dashboard
 
-There is no hosted public demo. Run the local Docker demo using the
-[Home instructions](README.md#a-time-ladder) or follow
+Open the [browser demo](https://aigovops-foundation.github.io/aigovops-policy-foundry/)
+to explore bundled demo evidence without installing anything; no data leaves your
+device. To run the local Docker demo, follow the
+[Home instructions](README.md#a-time-ladder) or
 [`scripts/demo.sh`](../../scripts/demo.sh).
 
 Overview shows the request-to-signing journey, verified-receipt count, acceptance

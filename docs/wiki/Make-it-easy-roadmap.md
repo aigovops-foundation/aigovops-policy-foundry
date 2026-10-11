@@ -9,7 +9,7 @@ an access or public boundary.
 
 | Priority | What | Why / persona | Effort | Human approval? |
 |---|---|---|---|---|
-| 1 | Publish the offline dashboard on GitHub Pages | Let every persona explore without Docker. Vite already uses `base: "./"`; a maintainer must enable Pages and approve a public URL under DEVIN.md guardrail 7. **Not done.** | M | Yes — maintainer |
+| 1 | Publish the offline dashboard on GitHub Pages | Let every persona explore without Docker. **Done: pages.yml publishes the offline dashboard on merge; a maintainer must set Settings → Pages → Source to GitHub Actions once.** | M | Yes — maintainer |
 | 2 | Policy request issue form | Give policy owners a structured intake path. **Done in this PR.** | S | No for code; maintainer creates the `policy-request` repository label if needed |
 | 3 | Printable approval packet and plain-language policy export | Help approvers and signers review the same material. **Not done.** | M | Yes — governance owner |
 | 4 | Devcontainer or Codespaces setup | Reduce setup friction for pro-code developers. **Not done.** | M | Yes — maintainer before public image / Codespaces policy |
@@ -21,8 +21,8 @@ an access or public boundary.
 | 10 | Screen-reader pass | Check real assistive technology; DEVIN.md says this has not been done. **Not done.** | M | No |
 | 11 | Add the docs link checker to CI | Catch broken relative links and wiki-map limits on future changes. **Script added in this PR; CI wiring intentionally not done.** | S | Yes — maintainer review |
 
-The [persona wiki](README.md) and Devin surfaces, blueprint and policy request
-form are included in this PR. No hosted demo, public artifact, org playbook or
-account configuration is created here.
+The static [browser demo](https://aigovops-foundation.github.io/aigovops-policy-foundry/)
+is published with bundled demo evidence. The GitHub Wiki remains uninitialized;
+no org playbook or account configuration is created here.
 
 [Back to Home](README.md)
