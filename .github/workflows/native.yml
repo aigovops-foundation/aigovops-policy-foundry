@@ -4,6 +4,10 @@ name: native apps
 # Artifacts are unsigned debug/test builds attached to the workflow run. Nothing is published.
 on:
   workflow_dispatch:
+    inputs:
+      only:
+        description: "Build only one target (all, desktop, android, ios)"
+        default: all
   push:
     tags: ["v*"]
   pull_request:
@@ -15,6 +19,7 @@ permissions:
 jobs:
   desktop:
     name: desktop (${{ matrix.platform }})
+    if: github.event_name != 'workflow_dispatch' || inputs.only == 'all' || inputs.only == 'desktop'
     strategy:
       fail-fast: false
       matrix:
@@ -53,6 +58,7 @@ jobs:
 
   android:
     name: android (debug APK)
+    if: github.event_name != 'workflow_dispatch' || inputs.only == 'all' || inputs.only == 'android'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -83,6 +89,7 @@ jobs:
 
   ios:
     name: ios (simulator build)
+    if: github.event_name != 'workflow_dispatch' || inputs.only == 'all' || inputs.only == 'ios'
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -98,8 +105,12 @@ jobs:
           APPLE_DEVELOPMENT_TEAM: ${{ secrets.APPLE_DEVELOPMENT_TEAM }}
         run: |
           npm ci --no-audit --no-fund || npm install --no-audit --no-fund
-          npx tauri ios init --ci
           if [ -z "$APPLE_DEVELOPMENT_TEAM" ]; then
-            echo "::notice::APPLE_DEVELOPMENT_TEAM not set: building for the simulator only (no signing)."
+            # Tauri needs a team ID to generate the Xcode project. Simulator builds are not
+            # provisioned, so a placeholder works for an unsigned CI build. Device and store
+            # builds need the Foundation's real team ID in the APPLE_DEVELOPMENT_TEAM secret.
+            echo "::notice::APPLE_DEVELOPMENT_TEAM not set: unsigned simulator build with a placeholder team."
+            export APPLE_DEVELOPMENT_TEAM=AAAAAAAAAA
           fi
+          npx tauri ios init --ci
           npx tauri ios build --target aarch64-sim --debug
