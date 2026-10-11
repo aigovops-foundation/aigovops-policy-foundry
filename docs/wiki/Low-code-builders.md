@@ -2,16 +2,18 @@
 
 For people who edit YAML or JSON and use forms and buttons, rather than writing Python.
 
-> **Start here:** Run the local dashboard and use its Gate playground with a sample JSON action.
+> **Start here:** Open the [browser demo](https://aigovops-foundation.github.io/aigovops-policy-foundry/) and use its Gate playground with a sample JSON action.
 
 ## Try it
 
-The repo has no hosted public demo. Start Docker Desktop or Podman and run
-`./scripts/demo.sh` from the repository root. Open `http://localhost:8000`.
-On Windows, run `scripts\demo.ps1`. In the dashboard, Gate → **Try an action**
-accepts raw JSON. **Check on server** needs a live API connection; the offline
-dashboard still evaluates its local demo. Evidence → **Tamper with it** shows
-verification fail on changed demo data.
+Open the [browser demo](https://aigovops-foundation.github.io/aigovops-policy-foundry/)
+to explore without installing anything; it is static, uses bundled demo evidence
+and no data leaves your device. For a local API-backed demo, start Docker Desktop
+or Podman and run `./scripts/demo.sh` from the repository root. Open
+`http://localhost:8000`. On Windows, run `scripts\demo.ps1`. In the dashboard,
+Gate → **Try an action** accepts raw JSON. **Check on server** needs a live API
+connection; the offline dashboard still evaluates its local demo. Evidence →
+**Tamper with it** shows verification fail on changed demo data.
 
 The API's interactive Swagger page is `/docs`. Open it on a running API and use
 **Try it out** for routes such as `POST /api/gate/evaluate`. See the
