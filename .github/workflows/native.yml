@@ -114,3 +114,7 @@ jobs:
           fi
           npx tauri ios init --ci
           npx tauri ios build --target aarch64-sim --debug
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: policy-foundry-ios-simulator
+          path: apps/native/src-tauri/gen/apple/build/arm64-sim/*.app
