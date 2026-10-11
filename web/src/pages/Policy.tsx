@@ -2,7 +2,7 @@ import { useRef, useState, type KeyboardEvent } from "react";
 import { Link } from "wouter";
 import { useStore } from "../lib/store";
 import { openExternal, POLICY_REQUEST_URL } from "../lib/links";
-import { decisions, parseMarkdown, POLICY_FILES, regoRequirements, regoTests, shortId } from "../lib/policy";
+import { decisions, parseMarkdown, POLICY_FILES, policyTitle, regoRequirements, regoTests, shortId } from "../lib/policy";
 import type { ReceiptStatus } from "../lib/evidence";
 
 type SourceTab = "rego" | "tests";
@@ -41,7 +41,7 @@ export default function Policy() {
   const blocks = parseMarkdown(doc);
   const titleBlock = blocks.find((block): block is { kind: "h1"; text: string } => block.kind === "h1");
   const owner = blocks.find((block): block is { kind: "p"; text: string } => block.kind === "p" && block.text.startsWith("Owner:"));
-  const title = titleBlock?.text.replace(/ -- EXAMPLE$/, "") ?? "Policy";
+  const title = policyTitle(titleBlock?.text ?? "Policy");
   const languageBlocks = blocks.filter((block) => block.kind !== "h1" && block !== owner);
   const requirements = regoRequirements(rego);
   const tests = regoTests(testsFile);
@@ -102,7 +102,7 @@ export default function Policy() {
               {requirements.map((requirement) => (
                 <div className="li policy-requirement" key={requirement.id}>
                   <span className="mono xs">{requirement.id}</span>
-                  <span>{requirement.text}</span>
+                  <span>{requirement.text.charAt(0).toUpperCase() + requirement.text.slice(1)}</span>
                 </div>
               ))}
             </div>
@@ -144,10 +144,8 @@ export default function Policy() {
           <div className="li">
             <div className="grow">
               <div className="title">Agents cannot approve or sign</div>
-              <div className="meta"><Link href="/agents">See each agent&apos;s limits</Link></div>
+              <div className="meta">Only people can approve or sign; the gate enforces this. <Link href="/agents">See each agent&apos;s limits</Link></div>
             </div>
-            <span className="xs muted mono num">{receiptLabels([decision.approvalCounter, decision.signedCounter])}</span>
-            <StatusPill ok={receiptChecksOk([decision.approvalCounter, decision.signedCounter], result.receiptStatus)} />
           </div>
         </div>
         <p className="muted xs" style={{ margin: "var(--space-3) 0 0" }}>

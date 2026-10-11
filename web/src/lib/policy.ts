@@ -66,6 +66,13 @@ export function regoTests(rego: string): string[] {
   return Array.from(rego.matchAll(/^(test_\w+)/gm), ([, name]) => name);
 }
 
+export function policyTitle(h1: string): string {
+  return h1
+    .replace(/ -- EXAMPLE$/, "")
+    .replace(/^Policy:\s*/, "")
+    .replace(/\s*\(REQ-[^)]+\)$/, "");
+}
+
 export type Decisions = {
   requester: string | null;
   approvers: string[];

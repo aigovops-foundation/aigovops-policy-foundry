@@ -1,6 +1,5 @@
 import { useRef } from "react";
-import { Link } from "wouter";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Check, X, Play, ShieldAlert, ArrowRight, Loader2, ChevronRight, ExternalLink } from "lucide-react";
 import { useStore, type GateEvent } from "../lib/store";
 import type { Receipt } from "../lib/evidence";

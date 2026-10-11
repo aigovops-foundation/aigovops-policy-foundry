@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { parseReceipts, type Bundle } from "../src/lib/evidence";
-import { decisions, parseMarkdown, POLICY_FILES, regoRequirements, regoTests, shortId } from "../src/lib/policy";
+import { decisions, parseMarkdown, POLICY_FILES, policyTitle, regoRequirements, regoTests, shortId } from "../src/lib/policy";
 import { isRole, ROLES } from "../src/lib/roles";
 
 const bundle = JSON.parse(readFileSync(new URL("../public/demo/bundle.json", import.meta.url), "utf8")) as Bundle;
@@ -11,6 +11,11 @@ const rego = bundle.files[POLICY_FILES.rego];
 const tests = bundle.files[POLICY_FILES.tests];
 
 describe("policy source helpers", () => {
+  it("removes the policy prefix, request ID and example suffix from the title", () => {
+    expect(policyTitle("Policy: AI-assisted changes to plant software (REQ-1042) -- EXAMPLE"))
+      .toBe("AI-assisted changes to plant software");
+  });
+
   it("parses the policy markdown and joins ordered-list continuation lines", () => {
     const blocks = parseMarkdown(doc);
     expect(blocks[0]).toMatchObject({ kind: "h1", text: expect.stringMatching(/^Policy: AI-assisted changes/) });
