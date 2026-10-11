@@ -23,12 +23,19 @@ A **gate** checks every action that crosses a system boundary and writes a signe
 
 | You want to... | Do this |
 |---|---|
+| Find the path for your role | Start at [docs/wiki](docs/wiki/README.md) |
 | See it on your laptop (Mac, Windows, Linux) | `./scripts/demo.sh` or `scripts\demo.ps1` (Docker Desktop or Podman), then open http://localhost:8000 |
 | Deploy to the cloud | Google Cloud Run (default), Azure Container Apps or AWS ECS Fargate: see [docs/HOSTING.md](docs/HOSTING.md) |
 | Have Devin host it | Dashboard on devinapps.com, API on Fly.io: see [deploy/devin](deploy/devin/README.md) |
 | Run any other way | Kubernetes, Fly.io, Render, any container host, or the static dashboard alone |
 | Build it with Devin | Point Devin at [DEVIN.md](DEVIN.md) |
 | Desktop or mobile app | Tauri 2 builds for Windows, macOS, Linux, Android and iOS: [apps/native](apps/native) |
+
+Persona pages: [policy and governance](docs/wiki/Policy-and-governance.md) ·
+[low-code builders](docs/wiki/Low-code-builders.md) ·
+[pro-code developers](docs/wiki/Pro-code-developers.md) ·
+[regulators, auditors and insurers](docs/wiki/Regulators-auditors-and-insurers.md) ·
+[end users](docs/wiki/End-users.md).
 
 The dashboard works fully offline with bundled demo evidence. Open **Evidence**, click **Tamper with it** on any receipt, and watch verification fail on your own device.
 

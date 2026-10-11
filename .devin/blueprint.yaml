@@ -1,3 +1,4 @@
+runs-on: default
 # Git-backed Devin environment blueprint for this repo. Sync it from Settings > Environment > Blueprints.
 initialize:
   - name: "Install OPA 1.21.1 (checksum-verified)"
@@ -40,4 +41,65 @@ knowledge:
     contents: |
       cd api && OPA_BIN=$(which opa) FOUNDRY_WEB_DIST=../web/dist uvicorn app.main:app --reload --port 8000
       cd web && npm run dev                                 # http://localhost:5173 (proxies /api to :8000)
+      API docs: http://localhost:8000/docs
+  - name: personas
+    contents: |
+      The persona wiki is docs/wiki/README.md. Start there to find the path for each role.
+
+---
+runs-on: macos
+initialize:
+  - name: "Set up Python 3.12 API environment"
+    run: |
+      /opt/homebrew/bin/python3.12 -m venv api/.venv
+      api/.venv/bin/python -m pip install --upgrade pip
+      api/.venv/bin/python -m pip install -e "api[dev]"
+  - name: "Install OPA 1.21.1 (official checksum)"
+    run: |
+      arch=$(uname -m)
+      case "$arch" in
+        arm64) opa_arch=arm64 ;;
+        x86_64) opa_arch=amd64 ;;
+        *) echo "Unsupported macOS architecture: $arch" >&2; exit 1 ;;
+      esac
+      asset="opa_darwin_${opa_arch}_static"
+      curl -fsSL -o "/tmp/$asset" "https://github.com/open-policy-agent/opa/releases/download/v1.21.1/$asset"
+      curl -fsSL -o "/tmp/$asset.sha256" "https://github.com/open-policy-agent/opa/releases/download/v1.21.1/$asset.sha256"
+      (cd /tmp && shasum -a 256 -c "$asset.sha256")
+      install -m 0755 "/tmp/$asset" api/.venv/bin/opa
+  - name: "Install Terraform with Homebrew"
+    run: brew install hashicorp/tap/terraform
+  - name: "Install Rust toolchain"
+    run: |
+      if ! command -v rustup >/dev/null; then
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
+      fi
+      . "$HOME/.cargo/env"
+      rustup toolchain install stable
+maintenance:
+  - name: "Dashboard dependencies"
+    run: cd web && npm ci --no-audit --no-fund
+knowledge:
+  - name: read-first
+    contents: |
+      Read DEVIN.md and docs/wiki/README.md before changing anything. python3 is Python 3.9
+      on this macOS image; use /opt/homebrew/bin/python3.12 for the API and tests.
+  - name: personas
+    contents: |
+      The persona wiki is docs/wiki/README.md. Start there to find the path for each role.
+  - name: test
+    contents: |
+      source api/.venv/bin/activate
+      cd api && pytest -q
+      OPA_BIN=/nonexistent pytest -q
+      cd web && npm test
+  - name: build
+    contents: |
+      cd web && npm run build
+      cd apps/native && npx tauri build
+  - name: dev-server
+    contents: |
+      source api/.venv/bin/activate
+      cd api && OPA_BIN="$VIRTUAL_ENV/bin/opa" FOUNDRY_WEB_DIST=../web/dist uvicorn app.main:app --reload --port 8000
+      cd web && npm run dev
       API docs: http://localhost:8000/docs

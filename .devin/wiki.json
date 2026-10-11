@@ -1,0 +1,94 @@
+{
+  "repo_notes": [
+    {
+      "content": "The five persona paths are policy and governance, low-code builders, pro-code developers, regulators/auditors/insurers, and end users. Their human-written source of truth is docs/wiki/."
+    },
+    {
+      "content": "Use careful claims language: OVERT-aligned, self-assessed and demo evidence. Do not describe the project as certified, compliant, conformant or AAL-4."
+    },
+    {
+      "content": "docs/wiki/ is the human-written source of truth for persona guidance. Update it when user-facing behavior changes; keep relative links and match facts to repository code."
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home / Overview",
+      "purpose": "Introduce the Foundry, the five persona paths and the local demo."
+    },
+    {
+      "title": "Persona paths",
+      "purpose": "Group the five role-specific starting points.",
+      "parent": "Home / Overview"
+    },
+    {
+      "title": "Policy and governance",
+      "purpose": "Explain requirements, agents, human approvals and open decisions.",
+      "parent": "Persona paths"
+    },
+    {
+      "title": "Low-code builders",
+      "purpose": "Help YAML and JSON editors explore the dashboard, Swagger and safe change path.",
+      "parent": "Persona paths"
+    },
+    {
+      "title": "Pro-code developers",
+      "purpose": "Document setup, architecture, API routes, tests and extension points.",
+      "parent": "Persona paths"
+    },
+    {
+      "title": "Regulators, auditors and insurers",
+      "purpose": "Explain independent bundle verification and assurance boundaries.",
+      "parent": "Persona paths"
+    },
+    {
+      "title": "End users",
+      "purpose": "Explain the governed change flow, gate outcomes and current accessibility status.",
+      "parent": "Persona paths"
+    },
+    {
+      "title": "Architecture",
+      "purpose": "Group the technical design pages.",
+      "parent": "Home / Overview"
+    },
+    {
+      "title": "Gate and parity",
+      "purpose": "Describe the Rego gate and its Python and TypeScript parity checks.",
+      "parent": "Architecture"
+    },
+    {
+      "title": "Evidence core and bundles",
+      "purpose": "Describe receipts, signatures, checkpoints and offline verification.",
+      "parent": "Architecture"
+    },
+    {
+      "title": "API",
+      "purpose": "List the service routes, environment variables and API behavior.",
+      "parent": "Architecture"
+    },
+    {
+      "title": "Dashboard and native apps",
+      "purpose": "Explain dashboard routes, offline mode and Tauri shells.",
+      "parent": "Architecture"
+    },
+    {
+      "title": "Deployment and hosting",
+      "purpose": "Summarize supported local, cloud and Devin preview deployment targets.",
+      "parent": "Architecture"
+    },
+    {
+      "title": "Devin integration",
+      "purpose": "Map repository Devin surfaces and distinguish dry-run from live product behavior.",
+      "parent": "Architecture"
+    },
+    {
+      "title": "Governance and releases",
+      "purpose": "Explain maintainer review, proposed decisions and Review Circle release sign-off.",
+      "parent": "Home / Overview"
+    },
+    {
+      "title": "Glossary",
+      "purpose": "Define gate, evidence and assurance terms used throughout the repository.",
+      "parent": "Home / Overview"
+    }
+  ]
+}

@@ -26,3 +26,4 @@
 - [ ] CI green
 - [ ] Screenshots at desktop and phone width for UI changes
 - [ ] No claims of certification or conformance added
+- [ ] docs/wiki updated if user-facing behaviour changed

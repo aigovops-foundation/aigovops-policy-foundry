@@ -1,0 +1,64 @@
+name: Policy request
+description: Propose a governance requirement for review
+title: "[Policy request]: "
+labels: [policy-request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include secrets, plant topology, OT asset lists, personal data or export-controlled data.
+  - type: textarea
+    id: requirement
+    attributes:
+      label: Requirement
+      description: What must or must not happen? Use testable language.
+      placeholder: "AI-assisted changes must..."
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Which systems, changes and people are covered?
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      description: Who is accountable for this policy?
+    validations:
+      required: true
+  - type: dropdown
+    id: risk_tier
+    attributes:
+      label: Risk tier
+      options:
+        - T1
+        - T2
+        - T3
+        - T4
+    validations:
+      required: true
+  - type: textarea
+    id: exceptions
+    attributes:
+      label: Exceptions
+      description: Who may request an exception, how is it time-limited, and how is it recorded? Write "None" if there are no exceptions.
+    validations:
+      required: true
+  - type: input
+    id: review_date
+    attributes:
+      label: Review date
+      description: When must this requirement be reviewed?
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: checkboxes
+    id: safe_content
+    attributes:
+      label: Safe to share
+      options:
+        - label: I confirm this request contains no secrets, plant topology, OT asset lists, or export-controlled data.
+          required: true
