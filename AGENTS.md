@@ -5,7 +5,7 @@ first. It is the build guide for this repository and applies to every agent, not
 
 Setup:
 - Python 3.11+: `python3 -m venv .venv && . .venv/bin/activate && pip install -e "api[dev]"`
-  (macOS blueprint: use `/opt/homebrew/bin/python3.12`; its `python3` is 3.9)
+  (macOS: use Homebrew's `python3.12` (`$(brew --prefix)/bin/python3.12`); system `python3` is 3.9)
 - Dashboard: `cd web && npm ci`
 
 Fast facts:

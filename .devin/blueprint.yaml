@@ -49,9 +49,12 @@ knowledge:
 ---
 runs-on: macos
 initialize:
+  - name: "Install Python 3.12 with Homebrew"
+    run: |
+      [ -x "$(brew --prefix)/bin/python3.12" ] || brew install python@3.12
   - name: "Set up Python 3.12 API environment"
     run: |
-      /opt/homebrew/bin/python3.12 -m venv api/.venv
+      "$(brew --prefix)/bin/python3.12" -m venv api/.venv
       api/.venv/bin/python -m pip install --upgrade pip
   - name: "Install OPA 1.21.1 (official checksum)"
     run: |
@@ -86,23 +89,26 @@ knowledge:
   - name: read-first
     contents: |
       Read DEVIN.md and docs/wiki/README.md before changing anything. python3 is Python 3.9
-      on this macOS image; use /opt/homebrew/bin/python3.12 for the API and tests.
+      on this macOS image; use Homebrew's `python3.12` (`$(brew --prefix)/bin/python3.12`)
+      for the API and tests.
   - name: personas
     contents: |
       The persona wiki is docs/wiki/README.md. Start there to find the path for each role.
   - name: test
     contents: |
       source api/.venv/bin/activate
-      cd api && pytest -q
-      OPA_BIN=/nonexistent pytest -q
-      cd web && npm test
+      (cd api && pytest -q && OPA_BIN=/nonexistent pytest -q)
+      (cd web && npm test)
   - name: build
     contents: |
-      cd web && npm run build
-      cd apps/native && npx tauri build
+      (cd web && npm run build)
+      (cd apps/native && npx tauri build)
   - name: dev-server
     contents: |
+      Run in two terminals from the repository root:
+      Terminal 1:
       source api/.venv/bin/activate
-      cd api && OPA_BIN="$VIRTUAL_ENV/bin/opa" FOUNDRY_WEB_DIST=../web/dist uvicorn app.main:app --reload --port 8000
-      cd web && npm run dev
+      (cd api && OPA_BIN="$VIRTUAL_ENV/bin/opa" FOUNDRY_WEB_DIST=../web/dist uvicorn app.main:app --reload --port 8000)
+      Terminal 2:
+      (cd web && npm run dev)
       API docs: http://localhost:8000/docs

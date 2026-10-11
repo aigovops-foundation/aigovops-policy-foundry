@@ -13,8 +13,8 @@ pip install -e "api[dev]"
 cd web && npm ci && npm test && npm run build
 ```
 
-On the macOS blueprint, replace `python3` with
-`/opt/homebrew/bin/python3.12`; the image's default `python3` is 3.9.
+On macOS, use Homebrew's `python3.12` (`$(brew --prefix)/bin/python3.12`)
+instead of the system `python3` (3.9 on the repo blueprint image).
 
 The policy gate uses OPA 1.21.1 when available; the API also has a parity-tested
 Python engine. The dashboard CI uses Node 22. The local setup guide is

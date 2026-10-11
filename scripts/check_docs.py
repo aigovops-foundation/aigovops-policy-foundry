@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LINK = re.compile("!?\\[[^\\]]+\\]\\(\\s*(?:<([^>]+)>|([^\\s)]+))[^)]*\\)")
 HEADING = re.compile("^ {0,3}#{1,6}\\s+(.+?)\\s*#*\\s*$")
 HTML_ID = re.compile("<a\\s+(?:[^>]*\\s)?(?:id|name)=[\\\"']([^\\\"']+)[\\\"']", re.IGNORECASE)
-INLINE_CODE = re.compile("`+[^`]*`+")
+INLINE_CODE = re.compile("`+([^`]*)`+")
 
 
 def markdown_files() -> list[Path]:
@@ -37,7 +37,7 @@ def without_code(text: str) -> str:
                 fence = None
             continue
         output.append(line)
-    return INLINE_CODE.sub("", "\n".join(output))
+    return INLINE_CODE.sub(r"\1", "\n".join(output))
 
 
 def heading_ids(path: Path) -> set[str]:
@@ -76,6 +76,8 @@ def check_links(files: list[Path]) -> tuple[int, list[str]]:
             path_text = unquote(target_url.path)
             target = (source.parent / path_text).resolve() if path_text else source
             if target.is_dir():
+                if not target_url.fragment:
+                    continue
                 target = target / "README.md"
             line = content.count("\n", 0, match.start()) + 1
             if not target.is_file():
