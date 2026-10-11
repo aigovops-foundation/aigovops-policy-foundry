@@ -87,7 +87,9 @@ export type Decisions = {
 
 export function testOrder(d: Decisions): "before" | "after" | "unknown" {
   if (d.testsCommittedCounter === null || d.draftCounter === null) return "unknown";
-  return d.testsCommittedCounter < d.draftCounter ? "before" : "after";
+  if (d.testsCommittedCounter < d.draftCounter) return "before";
+  if (d.testsCommittedCounter > d.draftCounter) return "after";
+  return "unknown";
 }
 
 export function decisions(receipts: Receipt[]): Decisions {

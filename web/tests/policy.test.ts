@@ -95,6 +95,11 @@ describe("policy decision evidence", () => {
     expect(testOrder({ ...result, draftCounter: null })).toBe("unknown");
   });
 
+  it("returns unknown when the ordering receipt counters are equal", () => {
+    const result = decisions(receipts);
+    expect(testOrder({ ...result, testsCommittedCounter: 8, draftCounter: 8 })).toBe("unknown");
+  });
+
   it("detects when the requester is included among approvers", () => {
     const result = decisions(receipts);
     const injected = receipts.map((receipt) => receipt.type === "policy_approval"
