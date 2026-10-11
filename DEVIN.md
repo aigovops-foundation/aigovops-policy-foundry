@@ -73,7 +73,7 @@ docs/                     BLUEPRINT.md, HOSTING.md, decisions/ (ADRs)
    making URLs public. Prepare everything, then stop and ask.
 8. **Foundation process:** bigger changes need an ADR in `docs/decisions/`; releases need
    Review Circle sign-off (`RELEASING.md`). Keep `main` green.
-9. **Report exact numbers.** "Passed 1,101 of 1,101", not "tests pass". Say what you could not run.
+9. **Report exact numbers.** "Passed 1,102 of 1,102", not "tests pass". Say what you could not run.
 
 ## 5. Current state (v0.1.0)
 
@@ -101,8 +101,8 @@ Do the phases in order. Each ends with a PR, green CI, and a short report with e
 
 ### Phase 0 — Environment (one time)
 Sync `.devin/blueprint.yaml` (Settings > Environment > Blueprints > Sync). Start a session and run
-the `foundry-build` skill. Expect: 25/25 OPA tests, parity golden current, 1,101 pytest (OPA) and
-1,100 + 1 skipped (no OPA), 11 vitest, web build OK, container smoke test OK.
+the `foundry-build` skill. Expect: 25/25 OPA tests, parity golden current, 1,102 pytest (OPA) and
+1,101 + 1 skipped (no OPA), 11 vitest, web build OK, container smoke test OK.
 
 ### Phase 1 — Dashboard and API polish (web + api)
 Goal: simple and compelling UX on every screen size.

@@ -47,7 +47,7 @@ The dashboard works fully offline with bundled demo evidence. Open **Evidence**,
 | Suite | Count |
 |---|---|
 | OPA policy tests | 25 |
-| Python (evidence, gate parity, API end to end, demo bundle) | 1,101 |
+| Python (evidence, gate parity, API end to end, demo bundle) | 1,102 |
 | TypeScript (verifier on the Python-built bundle, gate parity) | 11 |
 | Terraform validate | 4 configurations |
 | Container smoke test (build, run, pipeline, verify, offline verifier from zip) | CI |

@@ -49,7 +49,7 @@ Three things make the system trustworthy rather than merely automated:
 - Test-first independence. The verifier's acceptance tests are committed and receipted before the writer's draft is visible, so tests cannot be shaped to fit the policy.
 - Human-only authority. Approval needs two distinct authorized humans, neither of whom is the requester. A third human, the signing officer, signs with a KMS key gated by MFA. No agent holds approve or sign rights; the gate escalates those requests to people.
 
-The reference implementation runs end to end on a laptop: 25 of 25 gate policy tests pass, 10 of 10 acceptance tests pass on the example policy with 100% rule coverage and 7 of 7 mutants killed, 1,101 Python tests pass (evidence, tamper detection, a 1,033-case gate parity corpus, API end to end), the Terraform validates, and the produced bundle verifies offline in Python and in the browser.
+The reference implementation runs end to end on a laptop: 25 of 25 gate policy tests pass, 10 of 10 acceptance tests pass on the example policy with 100% rule coverage and 7 of 7 mutants killed, 1,102 Python tests pass (evidence, tamper detection, a 1,033-case gate parity corpus, API end to end), the Terraform validates, and the produced bundle verifies offline in Python and in the browser.
 
 ---
 
@@ -767,7 +767,7 @@ running every check below on each pull request (OPA 1.21.1, Python 3.12, Node 22
 | Gate parity (OPA vs Python vs TypeScript) | 1,005 decision cases and 28 approval sets identical |
 | Example policy vs verifier acceptance vectors | 10 of 10 pass; coverage 100% (10000 bp) |
 | Mutation analysis (delete each violation rule) | 7 of 7 mutants killed |
-| Python suite (`cd api && pytest`) | 1,101 pass with OPA; 1,100 pass + 1 skipped without OPA |
+| Python suite (`cd api && pytest`) | 1,102 pass with OPA; 1,101 pass + 1 skipped without OPA |
 | TypeScript suite (`cd web && npm test`) | 11 pass, including verifying the Python-built bundle and tamper cases |
 | End-to-end pipeline | 20 signed receipts; DSSE 2-of-2; witness-signed checkpoint; inclusion proof |
 | Terraform validate | GCP, Azure, AWS deploy targets and the PrivateLink design |

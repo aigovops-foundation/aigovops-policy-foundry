@@ -27,7 +27,7 @@ knowledge:
       and the definition of done. Never weaken the gate policy to make a test pass.
   - name: test
     contents: |
-      cd api && pytest -q                                   # 1,101 tests incl. gate parity
+      cd api && pytest -q                                   # 1,102 tests incl. gate parity
       cd api/foundry/assets && opa test policy/ config/agents.yaml -v
       python3 scripts/gen_parity.py --check                 # OPA golden still current
       cd web && npm test
