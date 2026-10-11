@@ -2,7 +2,7 @@ import { useRef, useState, type KeyboardEvent } from "react";
 import { Link } from "wouter";
 import { useStore } from "../lib/store";
 import { openExternal, POLICY_REQUEST_URL } from "../lib/links";
-import { decisions, parseMarkdown, POLICY_FILES, policyTitle, regoRequirements, regoTests, shortId } from "../lib/policy";
+import { decisions, parseMarkdown, POLICY_FILES, policyTitle, regoRequirements, regoTests, shortId, testOrder } from "../lib/policy";
 import type { ReceiptStatus } from "../lib/evidence";
 
 type SourceTab = "rego" | "tests";
@@ -48,10 +48,12 @@ export default function Policy() {
   const decision = decisions(result.receipts);
   const manifestOk = result.checks.find((check) => check.name === "manifest")?.ok ?? false;
   const approvalNote = `${decision.approvers.length} approvers: ${decision.approvers.map(shortId).join(", ")}${!decision.requesterApproved ? " · neither is the requester" : ""}`;
-  const testsNote = decision.testsCommittedCounter !== null && decision.draftCounter !== null &&
-    decision.testsCommittedCounter < decision.draftCounter
+  const testsOrder = testOrder(decision);
+  const testsNote = testsOrder === "before"
     ? `Committed before the draft was written (receipt #${decision.testsCommittedCounter} before #${decision.draftCounter})`
-    : "Committed before the draft was written";
+    : testsOrder === "after"
+    ? `Tests were committed after the draft (receipt #${decision.testsCommittedCounter} after #${decision.draftCounter})`
+    : "No receipt shows when the tests were committed relative to the draft";
 
   const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>, current: SourceTab) => {
     if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
@@ -120,7 +122,11 @@ export default function Policy() {
               <div className="meta">{testsNote}</div>
             </div>
             <span className="xs muted mono num">{receiptLabels([decision.testsCommittedCounter])}</span>
-            <StatusPill ok={receiptChecksOk([decision.testsCommittedCounter], result.receiptStatus)} />
+            {testsOrder === "before"
+              ? <StatusPill ok={receiptChecksOk([decision.testsCommittedCounter], result.receiptStatus)} />
+              : testsOrder === "after"
+              ? <StatusPill ok={false} label="Not test-first" />
+              : <span className="pill warn">Unproven</span>}
           </div>
           <div className="li">
             <div className="grow">

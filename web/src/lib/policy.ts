@@ -85,6 +85,11 @@ export type Decisions = {
   draftCounter: number | null;
 };
 
+export function testOrder(d: Decisions): "before" | "after" | "unknown" {
+  if (d.testsCommittedCounter === null || d.draftCounter === null) return "unknown";
+  return d.testsCommittedCounter < d.draftCounter ? "before" : "after";
+}
+
 export function decisions(receipts: Receipt[]): Decisions {
   const approval = receipts.find((r) => r.type === "policy_approval");
   const signature = receipts.find((r) => r.type === "bundle_signed");

@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { parseReceipts, type Bundle } from "../src/lib/evidence";
-import { decisions, parseMarkdown, POLICY_FILES, policyTitle, regoRequirements, regoTests, shortId } from "../src/lib/policy";
+import { decisions, parseMarkdown, POLICY_FILES, policyTitle, regoRequirements, regoTests, shortId, testOrder, type Decisions } from "../src/lib/policy";
 import { isRole, ROLES } from "../src/lib/roles";
 
 const bundle = JSON.parse(readFileSync(new URL("../public/demo/bundle.json", import.meta.url), "utf8")) as Bundle;
@@ -58,6 +58,41 @@ describe("policy decision evidence", () => {
     expect(result.signers).toHaveLength(2);
     expect(result.testsCommittedCounter).toBe(5);
     expect(result.draftCounter).toBe(8);
+  });
+
+  it("proves the demo tests were committed before the draft", () => {
+    expect(testOrder(decisions(receipts))).toBe("before");
+  });
+
+  it("identifies tests committed after the draft", () => {
+    const result: Decisions = {
+      requester: null,
+      approvers: [],
+      requesterApproved: false,
+      approvalCounter: null,
+      signingOfficer: null,
+      signers: [],
+      signedCounter: null,
+      testsCommittedCounter: 8,
+      draftCounter: 7,
+    };
+    expect(testOrder(result)).toBe("after");
+  });
+
+  it("returns unknown when either ordering receipt is missing", () => {
+    const result: Decisions = {
+      requester: null,
+      approvers: [],
+      requesterApproved: false,
+      approvalCounter: null,
+      signingOfficer: null,
+      signers: [],
+      signedCounter: null,
+      testsCommittedCounter: 5,
+      draftCounter: 8,
+    };
+    expect(testOrder({ ...result, testsCommittedCounter: null })).toBe("unknown");
+    expect(testOrder({ ...result, draftCounter: null })).toBe("unknown");
   });
 
   it("detects when the requester is included among approvers", () => {
