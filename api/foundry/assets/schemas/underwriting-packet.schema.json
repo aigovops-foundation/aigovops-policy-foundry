@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnderwritingEvidencePacket v0.1",
+  "type": "object",
+  "required": [
+    "tenant",
+    "period",
+    "system_inventory",
+    "pillars",
+    "metrics",
+    "incidents",
+    "limitations",
+    "receipt_log_root"
+  ],
+  "properties": {
+    "tenant": {
+      "type": "string"
+    },
+    "period": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ]
+    },
+    "system_inventory": {
+      "type": "array"
+    },
+    "pillars": {
+      "type": "object",
+      "description": "AIUC-1 pillar -> control coverage (bp)",
+      "required": [
+        "data_privacy",
+        "security",
+        "safety",
+        "reliability",
+        "accountability",
+        "society"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "gate_coverage_bp",
+        "denial_rate_bp",
+        "hitl_override_rate_bp",
+        "attestation_gap_count",
+        "median_review_latency_s"
+      ]
+    },
+    "incidents": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "receipt_log_root": {
+      "type": "string"
+    },
+    "risk_tier": {
+      "enum": [
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6632 @@
+{
+ "decisions": [
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:secret.read",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push:policy-src/main",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push:policy-tests/**",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push:policy-tests/**",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push:policy-src/**",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push:policy-src/**",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push:policy-src/**",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.push",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:pr.review.approve",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:policy.approve",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "human-only-action",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "ot-zone-conduit",
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "unknown-agent"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "relay-bypass"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "relay-bypass"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "recursion-depth-exceeded"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "repeat-limit-exceeded"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "scope-widening:git.push:policy-src/branches/foundry/*"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "exceeds-role-capability:git.push:policy-src/branches/foundry/*"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "delegation-target-not-allowed",
+    "exceeds-role-capability:git.read:policy-src"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "delegation-missing-parent-scope",
+    "scope-widening:git.read:policy-src"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "delegation-target-not-allowed",
+    "no-matching-capability"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:artifact.sign",
+    "human-only-action",
+    "no-matching-capability"
+   ],
+   "result": "escalate"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "delegation-missing-parent-scope",
+    "scope-widening:opa.test.local"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "forbidden:git.merge",
+    "human-only-action",
+    "no-matching-capability",
+    "ot-zone-conduit"
+   ],
+   "result": "deny"
+  }
+ ],
+ "approvals": [
+  [
+   "fewer-than-two-approvers",
+   "requester-is-sole-approver"
+  ],
+  [
+   "fewer-than-two-approvers"
+  ],
+  [],
+  [
+   "fewer-than-two-approvers"
+  ],
+  [
+   "approver-not-authorized:u-x"
+  ],
+  [
+   "agent-cannot-approve"
+  ],
+  [
+   "approver-not-authorized:u-x"
+  ],
+  [
+   "fewer-than-two-approvers",
+   "requester-is-sole-approver"
+  ],
+  [
+   "fewer-than-two-approvers"
+  ],
+  [
+   "signer-also-approver"
+  ],
+  [
+   "fewer-than-two-approvers"
+  ],
+  [
+   "approver-not-authorized:u-x"
+  ],
+  [
+   "agent-cannot-approve"
+  ],
+  [
+   "approver-not-authorized:u-x",
+   "signer-also-approver"
+  ],
+  [
+   "fewer-than-two-approvers",
+   "requester-is-sole-approver"
+  ],
+  [
+   "fewer-than-two-approvers",
+   "requester-counted-as-approver",
+   "requester-is-sole-approver"
+  ],
+  [
+   "requester-counted-as-approver"
+  ],
+  [
+   "fewer-than-two-approvers",
+   "requester-counted-as-approver",
+   "requester-is-sole-approver"
+  ],
+  [
+   "approver-not-authorized:u-x",
+   "requester-counted-as-approver"
+  ],
+  [
+   "agent-cannot-approve",
+   "requester-counted-as-approver"
+  ],
+  [
+   "approver-not-authorized:u-x",
+   "requester-counted-as-approver"
+  ],
+  [
+   "fewer-than-two-approvers",
+   "requester-is-sole-approver"
+  ],
+  [
+   "fewer-than-two-approvers",
+   "requester-counted-as-approver",
+   "requester-is-sole-approver"
+  ],
+  [
+   "requester-counted-as-approver",
+   "signer-also-approver"
+  ],
+  [
+   "fewer-than-two-approvers",
+   "requester-counted-as-approver",
+   "requester-is-sole-approver"
+  ],
+  [
+   "approver-not-authorized:u-x",
+   "requester-counted-as-approver"
+  ],
+  [
+   "agent-cannot-approve",
+   "requester-counted-as-approver"
+  ],
+  [
+   "approver-not-authorized:u-x",
+   "requester-counted-as-approver",
+   "signer-also-approver"
+  ]
+ ]
+}

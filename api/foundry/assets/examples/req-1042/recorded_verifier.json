@@ -1,0 +1,12 @@
+{
+  "_comment": "Recorded output of the OPA verifier step; scripts/check_recorded.py fails CI if a fresh OPA run differs.",
+  "results": {
+    "passed": 10,
+    "failed": 0,
+    "errors": 0,
+    "failing_cases": []
+  },
+  "coverage_bp": 10000,
+  "mutation_killed": 7,
+  "mutation_total": 7
+}

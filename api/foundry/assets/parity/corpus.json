@@ -1,0 +1,5462 @@
+{
+ "decisions": [
+  {
+   "agent": "manager",
+   "action": "git.push"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "git.push",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "git.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.open",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "pr.review.request_changes",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "opa.test.local",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "policy.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "artifact.sign",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "underwriting.release",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "network.connect",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "finding.file",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "secret.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "requirements"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "ot/"
+  },
+  {
+   "agent": "manager",
+   "action": "beacon.receipt.emit",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.push",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "git.merge",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.open",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "pr.review.request_changes",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "policy.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "artifact.sign",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "underwriting.release",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "network.connect",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "finding.file",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "secret.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "requirements"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "ot/"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "beacon.receipt.emit",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.push",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "git.merge",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.open",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "pr.review.request_changes",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "opa.test.local",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "policy.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "artifact.sign",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "underwriting.release",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "devin.session.create",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "network.connect",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "finding.file",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "secret.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "requirements"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "ot/"
+  },
+  {
+   "agent": "test_verifier",
+   "action": "beacon.receipt.emit",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.push",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "git.merge",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.open",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "pr.review.request_changes",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "opa.test.local",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "policy.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "underwriting.release",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "devin.session.create",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "network.connect",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "finding.file",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "secret.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "requirements"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "ot/"
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "beacon.receipt.emit",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.push",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "git.merge",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.open",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "pr.review.request_changes",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "opa.test.local",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "policy.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "artifact.sign",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "underwriting.release",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "devin.session.create",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "network.connect",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "finding.file",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "secret.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "requirements"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "ot/"
+  },
+  {
+   "agent": "rogue",
+   "action": "beacon.receipt.emit",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.push",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "git.merge",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.open",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "pr.review.request_changes",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "opa.test.local",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "policy.approve",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "artifact.sign",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "underwriting.release",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "devin.session.create",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "network.connect",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "finding.file",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "secret.read",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src/branches/foundry/a/b"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/branches/foundry/REQ-1"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "policy-tests/main"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "requirements"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "policy-src"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "ot/l2/historian"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "ot/"
+  },
+  {
+   "agent": "u-chen",
+   "action": "beacon.receipt.emit",
+   "target": "otx/thing"
+  },
+  {
+   "agent": "policy_writer",
+   "on_behalf_of": "compliance_auditor",
+   "action": "git.push",
+   "target": "policy-src/branches/foundry/x"
+  },
+  {
+   "agent": "test_verifier",
+   "on_behalf_of": "policy_writer",
+   "action": "git.push",
+   "target": "policy-tests/branches/foundry/x"
+  },
+  {
+   "agent": "policy_writer",
+   "on_behalf_of": "nobody",
+   "action": "opa.test.local"
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "depth": 4
+  },
+  {
+   "agent": "policy_writer",
+   "action": "opa.test.local",
+   "depth": 3,
+   "identical_call_count": 4
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "policy_writer",
+    "parent_scope": [
+     "git.read:policy-src",
+     "git.push:policy-src/branches/foundry/*",
+     "pr.open:policy-src",
+     "opa.test.local"
+    ],
+    "child_scope": [
+     "git.read:policy-src",
+     "git.push:policy-src/branches/foundry/*"
+    ]
+   }
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "policy_writer",
+    "parent_scope": [
+     "git.read:policy-src"
+    ],
+    "child_scope": [
+     "git.read:policy-src",
+     "git.push:policy-src/branches/foundry/*"
+    ]
+   }
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "test_verifier",
+    "parent_scope": [
+     "git.read:policy-src",
+     "git.push:policy-src/branches/foundry/*",
+     "pr.open:policy-src",
+     "opa.test.local"
+    ],
+    "child_scope": [
+     "git.push:policy-src/branches/foundry/*"
+    ]
+   }
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "nobody",
+    "parent_scope": [
+     "git.read:policy-src",
+     "git.push:policy-src/branches/foundry/*",
+     "pr.open:policy-src",
+     "opa.test.local"
+    ],
+    "child_scope": [
+     "git.read:policy-src"
+    ]
+   }
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "policy_writer",
+    "child_scope": [
+     "git.read:policy-src"
+    ]
+   }
+  },
+  {
+   "agent": "policy_writer",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "test_verifier",
+    "parent_scope": [
+     "git.read:policy-src",
+     "git.push:policy-src/branches/foundry/*",
+     "pr.open:policy-src",
+     "opa.test.local"
+    ],
+    "child_scope": []
+   }
+  },
+  {
+   "agent": "compliance_auditor",
+   "action": "artifact.sign"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "policy_writer",
+    "parent_scope": [],
+    "child_scope": []
+   }
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "policy_writer",
+    "parent_scope": false,
+    "child_scope": [
+     "opa.test.local"
+    ]
+   }
+  },
+  {
+   "agent": "manager",
+   "action": "git.merge",
+   "target": "ot/l1/plc"
+  }
+ ],
+ "approvals": [
+  {
+   "requester": "u-patel",
+   "signer": "u-okafor",
+   "approvals": []
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-chen",
+     "groups": [
+      "grp-ai-governance-board"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-x",
+     "groups": [
+      "grp-other"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "compliance_auditor",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-chen",
+     "groups": [
+      "grp-ai-governance-board"
+     ]
+    },
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-x",
+     "groups": [
+      "grp-other"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-chen",
+   "approvals": []
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-chen",
+     "groups": [
+      "grp-ai-governance-board"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-x",
+     "groups": [
+      "grp-other"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "compliance_auditor",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-patel",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-chen",
+     "groups": [
+      "grp-ai-governance-board"
+     ]
+    },
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-x",
+     "groups": [
+      "grp-other"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-okafor",
+   "approvals": []
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-chen",
+     "groups": [
+      "grp-ai-governance-board"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-x",
+     "groups": [
+      "grp-other"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "compliance_auditor",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-okafor",
+   "approvals": [
+    {
+     "subject": "u-chen",
+     "groups": [
+      "grp-ai-governance-board"
+     ]
+    },
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-x",
+     "groups": [
+      "grp-other"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-chen",
+   "approvals": []
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-chen",
+     "groups": [
+      "grp-ai-governance-board"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-x",
+     "groups": [
+      "grp-other"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "compliance_auditor",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    }
+   ]
+  },
+  {
+   "requester": "u-alvarez",
+   "signer": "u-chen",
+   "approvals": [
+    {
+     "subject": "u-chen",
+     "groups": [
+      "grp-ai-governance-board"
+     ]
+    },
+    {
+     "subject": "u-alvarez",
+     "groups": [
+      "grp-ai-policy-owners"
+     ]
+    },
+    {
+     "subject": "u-x",
+     "groups": [
+      "grp-other"
+     ]
+    }
+   ]
+  }
+ ]
+}

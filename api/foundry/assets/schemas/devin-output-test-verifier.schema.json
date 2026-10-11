@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TestVerifierOutput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "phase",
+    "vectors_commit",
+    "results",
+    "coverage_bp",
+    "mutation_score_bp",
+    "verdict",
+    "is_final"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "phase": {
+      "enum": [
+        "A_commit_vectors",
+        "B_verify"
+      ]
+    },
+    "vectors_commit": {
+      "type": "string",
+      "description": "git SHA of acceptance vectors committed BEFORE seeing the policy"
+    },
+    "results": {
+      "type": "object",
+      "required": [
+        "passed",
+        "failed",
+        "errors"
+      ],
+      "properties": {
+        "passed": {
+          "type": "integer"
+        },
+        "failed": {
+          "type": "integer"
+        },
+        "errors": {
+          "type": "integer"
+        },
+        "failing_cases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "coverage_bp": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10000,
+      "description": "rule coverage in basis points (no floats)"
+    },
+    "mutation_score_bp": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10000
+    },
+    "verdict": {
+      "enum": [
+        "pass",
+        "fail",
+        "inconclusive"
+      ]
+    },
+    "is_final": {
+      "type": "boolean"
+    }
+  }
+}

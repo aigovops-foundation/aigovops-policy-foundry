@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryPolicyArtifactPredicate v0.1 (proposed)",
+  "type": "object",
+  "required": [
+    "request_id",
+    "policy_id",
+    "policy_version",
+    "previous_policy_digest",
+    "requirements",
+    "verification",
+    "audit",
+    "approvals",
+    "receipt_log",
+    "signing"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "policy_version": {
+      "type": "string"
+    },
+    "previous_policy_digest": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification": {
+      "type": "object"
+    },
+    "audit": {
+      "type": "object"
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "subject_commitment",
+          "role",
+          "ts_ns"
+        ]
+      }
+    },
+    "receipt_log": {
+      "type": "object",
+      "required": [
+        "merkle_root",
+        "size"
+      ]
+    },
+    "signing": {
+      "type": "object"
+    },
+    "scope_statement": {
+      "type": "string"
+    }
+  }
+}

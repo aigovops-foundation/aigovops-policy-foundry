@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ComplianceAuditorFindings",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "framework_mappings",
+    "findings",
+    "conflicts_with_existing",
+    "recommendation"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "framework_mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "framework",
+          "control_id",
+          "coverage"
+        ],
+        "properties": {
+          "framework": {
+            "enum": [
+              "ISO/IEC 42001",
+              "NIST AI RMF",
+              "EU AI Act",
+              "IEC 62443",
+              "AIUC-1",
+              "OVERT 1.1",
+              "ISO 26262",
+              "IEC 61508",
+              "internal"
+            ]
+          },
+          "control_id": {
+            "type": "string"
+          },
+          "coverage": {
+            "enum": [
+              "full",
+              "partial",
+              "none",
+              "not_applicable"
+            ]
+          },
+          "evidence_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "severity",
+          "statement",
+          "evidence_ref"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "blocker",
+              "major",
+              "minor",
+              "observation"
+            ]
+          },
+          "statement": {
+            "type": "string"
+          },
+          "evidence_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "conflicts_with_existing": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendation": {
+      "enum": [
+        "request_changes",
+        "ready_for_human_review"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "request_id": "REQ-1042",
+  "framework_mappings": [
+    {"framework": "ISO/IEC 42001", "control_id": "A.6.2.6", "coverage": "partial", "evidence_ref": "policy/ai_code_change.rego:20-41"},
+    {"framework": "NIST AI RMF", "control_id": "GOVERN 1.4", "coverage": "partial", "evidence_ref": "docs/ai_code_change.md"},
+    {"framework": "IEC 62443", "control_id": "62443-3-3 SR 5.1 (network segmentation)", "coverage": "partial", "evidence_ref": "policy/ai_code_change.rego:14-18"},
+    {"framework": "OVERT 1.1", "control_id": "HITL-2.3", "coverage": "full", "evidence_ref": "policy/ai_code_change.rego:20-25"},
+    {"framework": "AIUC-1", "control_id": "accountability pillar (control ID per licensed snapshot)", "coverage": "partial", "evidence_ref": "receipts.ndjson#policy_approval"}
+  ],
+  "findings": [
+    {"id": "F-1", "severity": "minor", "statement": "REQ-1042.2 accepts any human reviewer; it does not check the reviewer has repository write rights or training on AI-assisted review.", "evidence_ref": "policy/ai_code_change.rego:20-25"},
+    {"id": "F-2", "severity": "observation", "statement": "moc_ticket presence is checked but not validated against the MOC system; a later integration should verify ticket state.", "evidence_ref": "policy/ai_code_change.rego:14-18"}
+  ],
+  "conflicts_with_existing": [],
+  "recommendation": "ready_for_human_review"
+}

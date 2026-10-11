@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+out/
+node_modules/
+web/dist/
+.terraform/
+*.tfstate*
+apps/native/src-tauri/target/
+apps/native/src-tauri/gen/
+.DS_Store
+.env

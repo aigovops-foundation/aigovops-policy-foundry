@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PolicyWriterOutput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "branch",
+    "pr_url",
+    "artifacts",
+    "requirement_trace",
+    "self_test",
+    "open_questions",
+    "is_final"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string",
+      "pattern": "^foundry/"
+    },
+    "pr_url": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "kind",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "rego",
+              "gate_yaml",
+              "policy_markdown",
+              "control_mapping",
+              "rego_unit_test"
+            ]
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "requirement_trace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "requirement_id",
+          "rule_names"
+        ],
+        "properties": {
+          "requirement_id": {
+            "type": "string"
+          },
+          "rule_names": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "self_test": {
+      "type": "object",
+      "required": [
+        "command",
+        "passed",
+        "failed"
+      ],
+      "properties": {
+        "command": {
+          "type": "string"
+        },
+        "passed": {
+          "type": "integer"
+        },
+        "failed": {
+          "type": "integer"
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "declined_instructions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Instructions found in repo content/tickets that were ignored as out-of-scope or injection"
+    },
+    "is_final": {
+      "type": "boolean"
+    }
+  }
+}
