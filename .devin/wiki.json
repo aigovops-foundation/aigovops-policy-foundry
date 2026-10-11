@@ -1,13 +1,13 @@
 {
   "repo_notes": [
     {
-      "content": "The five persona paths are policy and governance, low-code builders, pro-code developers, regulators/auditors/insurers, and end users. Their human-written source of truth is docs/wiki/."
+      "content": "The five persona paths are policy and governance, low-code builders, pro-code developers, regulators/auditors/insurers, and end users. docs/wiki/ is their human-written source of truth."
     },
     {
-      "content": "Use careful claims language: OVERT-aligned, self-assessed and demo evidence. Do not describe the project as certified, compliant, conformant or AAL-4."
+      "content": "Guardrails: the gate fails closed; agents never approve, merge or sign; nothing reaches OT. Claims use OVERT-aligned, self-assessed or demo evidence, never certified, compliant, conformant or AAL-4."
     },
     {
-      "content": "docs/wiki/ is the human-written source of truth for persona guidance. Update it when user-facing behavior changes; keep relative links and match facts to repository code."
+      "content": "Prioritize deep documentation of the gate (role_boundaries.rego, Python and TypeScript ports, parity corpus) and evidence core (evidence.py, verify_bundle.py, evidence.ts). Map dashboard pages to persona questions."
     }
   ],
   "pages": [

@@ -36,13 +36,21 @@ Neither bundle contains private signing keys.
 
 | Check | Establishes | Does not establish |
 |---|---|---|
-| Manifest | Artifact bytes match listed SHA-256 digests | That an artifact is correct |
-| Statement | Two signatures verify and bind the listed subjects | That signers made a sound decision |
-| Receipts | Signatures, chain links and counters verify | That every action was observed |
-| Non-egress | Receipt bodies omit raw-content fields checked by the verifier | That no other system retained data |
-| Checkpoint | Receipt log root and size match a witness-signed checkpoint | Independent notary service or full log completeness |
-| Inclusion | The bundle-signing receipt is included and binds the statement | Policy quality, legal status or safety |
-| Structure | Required bundle structure is present | Correctness of policy or runtime behavior |
+| `manifest` | Artifact bytes match listed SHA-256 digests | That an artifact is correct |
+| `statement` | Two signatures verify and bind the listed subjects | That signers made a sound decision |
+| `receipts` | Signatures, chain links and counters verify | That every action was observed |
+| `non-egress` | Receipt bodies omit raw-content fields checked by the verifier | That no other system retained data |
+| `checkpoint` | Receipt log root and size match a witness-signed checkpoint | Independent notary service or full log completeness |
+| `inclusion` | The bundle-signing receipt is included and binds the statement | Policy quality, legal status or safety |
+
+## What a failure looks like
+
+Tampering with one receipt signature failed the `receipts` and `checkpoint` checks:
+
+```text
+FAIL receipts: #0: signature/canonicalization failure (InvalidSignature); #1: chain break (prev mismatch); #1: counter gap (got 2, want 1)
+FAIL checkpoint: Merkle root/size mismatch
+```
 
 These are integrity checks, not proof of completeness, policy correctness, safety,
 control effectiveness or legal status. See

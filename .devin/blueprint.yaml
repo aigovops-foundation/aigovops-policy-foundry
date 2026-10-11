@@ -53,7 +53,6 @@ initialize:
     run: |
       /opt/homebrew/bin/python3.12 -m venv api/.venv
       api/.venv/bin/python -m pip install --upgrade pip
-      api/.venv/bin/python -m pip install -e "api[dev]"
   - name: "Install OPA 1.21.1 (official checksum)"
     run: |
       arch=$(uname -m)
@@ -77,8 +76,12 @@ initialize:
       . "$HOME/.cargo/env"
       rustup toolchain install stable
 maintenance:
+  - name: "Python API dependencies"
+    run: api/.venv/bin/python -m pip install -e "api[dev]"
   - name: "Dashboard dependencies"
     run: cd web && npm ci --no-audit --no-fund
+  - name: "Native shell dependencies"
+    run: cd apps/native && npm ci --no-audit --no-fund || npm install --no-audit --no-fund
 knowledge:
   - name: read-first
     contents: |
