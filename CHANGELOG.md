@@ -2,6 +2,8 @@
 
 ## 0.1.0 (unreleased, incubating)
 
+- Group Dependabot updates into one pull request per ecosystem per interval (weekly on Monday for
+  GitHub Actions, npm and pip; monthly for cargo and docker) instead of one PR per package.
 - Add the persona wiki, DeepWiki page map, Devin review guidance and skills, macOS blueprint,
   policy request form, and documentation link checker.
 - Publish the static dashboard demo to GitHub Pages with bundled demo evidence only.
