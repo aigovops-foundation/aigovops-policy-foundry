@@ -4,6 +4,9 @@
 
 - Group Dependabot updates into one pull request per ecosystem per interval (weekly on Monday for
   GitHub Actions, npm and pip; monthly for cargo and docker) instead of one PR per package.
+- Container image moves to the estate's two standard bases: the web build stage on `node:22-alpine`
+  (was `node:22-bookworm-slim`) and the runtime on `python:3.12-slim` (was `python:3.14-slim-bookworm`,
+  which CI never tested; `requires-python >= 3.11`).
 - Add the persona wiki, DeepWiki page map, Devin review guidance and skills, macOS blueprint,
   policy request form, and documentation link checker.
 - Publish the static dashboard demo to GitHub Pages with bundled demo evidence only.
