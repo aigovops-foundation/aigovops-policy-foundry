@@ -2,7 +2,7 @@
 # AiGovOps Policy Foundry -- one container: API + dashboard + OPA. Multi-arch (amd64, arm64).
 # Build:  docker build -t policy-foundry .        Run: docker run -p 8000:8000 policy-foundry
 
-FROM node:22-alpine AS web
+FROM node:26-alpine AS web
 WORKDIR /src/web
 COPY web/package.json web/package-lock.json ./
 RUN npm ci --no-audit --no-fund
@@ -10,7 +10,7 @@ COPY web/ ./
 COPY api/foundry/assets/parity /src/api/foundry/assets/parity
 RUN npm run build
 
-FROM python:3.12-slim AS runtime
+FROM python:3.14-slim AS runtime
 ARG TARGETARCH
 ARG OPA_VERSION=1.21.1
 ARG OPA_SHA256_AMD64=668506eb17a2eaa1fce6cc0d1f42ef85125d4ac5bda5fc74d1152d0c77145031
