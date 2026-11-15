@@ -36,7 +36,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field
 
 from foundry import devin_client, gate, pipeline
-from foundry.verify_bundle import verify as verify_dir
+from foundry.verify_bundle import validate_manifest, verify as verify_dir
 
 VERSION = "0.1.0"
 ENGINE = os.environ.get("FOUNDRY_GATE_ENGINE", "auto")
@@ -179,7 +179,11 @@ def _summary(rid: str, r: dict) -> dict:
 def _new_run() -> tuple[str, dict]:
     rid = uuid.uuid4().hex[:12]
     out = WORK / rid
-    summary = pipeline.run(out, ENGINE)
+    try:
+        summary = pipeline.run(out, ENGINE)
+    except pipeline.VerifierError as e:
+        shutil.rmtree(out, ignore_errors=True)
+        raise HTTPException(503, f"Verifier inconclusive: {e}") from e
     summary.pop("log", None)
     entry = {"dir": out, "created": int(time.time()), "summary": summary}
     RUNS[rid] = entry
@@ -236,14 +240,19 @@ SAFE_PATH = re.compile(r"^(?:artifacts/[A-Za-z0-9_./-]+|keys/[A-Za-z0-9_.-]+\.pu
 
 @app.post("/api/verify")
 def verify_bundle(b: BundleJSON) -> dict:
-    total = sum(len(v) for v in b.files.values())
+    total = sum(len(v.encode("utf-8")) for v in b.files.values())
     if total > 2_000_000:
         raise HTTPException(413, "bundle too large")
+    for rel in b.files:
+        if not SAFE_PATH.fullmatch(rel) or ".." in rel.split("/"):
+            raise HTTPException(422, f"unsafe path in bundle: {rel!r}")
+    try:
+        validate_manifest(json.loads(b.files.get("manifest.json", "")))
+    except ValueError as e:
+        return {"ok": False, "checks": [{"name": "structure", "ok": False, "detail": str(e)}]}
     with tempfile.TemporaryDirectory() as tmp:
         root = pathlib.Path(tmp)
         for rel, content in b.files.items():
-            if not SAFE_PATH.match(rel) or ".." in rel.split("/"):
-                raise HTTPException(422, f"unsafe path in bundle: {rel!r}")
             p = root / rel
             p.parent.mkdir(parents=True, exist_ok=True)
             p.write_text(content)
@@ -280,6 +289,6 @@ if WEB and pathlib.Path(WEB, "index.html").exists():
     @app.get("/{path:path}", include_in_schema=False)
     def spa(path: str) -> Any:
         p = (pathlib.Path(WEB) / path).resolve()
-        if path and p.is_file() and str(p).startswith(str(pathlib.Path(WEB).resolve())):
+        if path and p.is_relative_to(pathlib.Path(WEB).resolve()) and p.is_file():
             return FileResponse(p)
         return FileResponse(pathlib.Path(WEB, "index.html"))

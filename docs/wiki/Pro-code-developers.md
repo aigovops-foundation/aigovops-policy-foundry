@@ -69,10 +69,32 @@ Environment variables: `FOUNDRY_API_TOKEN`, `FOUNDRY_CORS_ORIGINS`,
 `FOUNDRY_TAG`, `VITE_API_BASE` and `FOUNDRY_DEVIN_LIVE`. Never enable
 `FOUNDRY_DEVIN_LIVE` on a public deployment.
 
+### Verification boundaries and tool errors
+
+The [Python verifier](../../api/foundry/verify_bundle.py) validates the complete manifest
+before reading any artifact or key. It accepts 1–1,000 relative artifact names with SHA-256
+digests; absolute paths, traversal, symlinks and non-regular files are rejected. All files
+read by a verification share a 2,000,000-byte budget, including metadata. The upload API
+also limits the total UTF-8 file bytes and validates paths/manifest before materializing files.
+The browser verifier has no filesystem boundary; these filesystem limits describe Python/API
+verification, not an additional browser guarantee.
+
+The [pipeline](../../api/foundry/pipeline.py) bounds each acceptance, coverage and mutation OPA
+process to 30 seconds (gate evaluations already have 20-second deadlines). Nonzero acceptance
+exits, missing/malformed results, zero executed tests, invalid coverage and mutation tool errors
+are inconclusive: the CLI exits nonzero, and `POST /api/runs` returns 503 without caching a run
+or signing a bundle. A mutant's exit 2 counts as a kill only with explicit failed-test results,
+not tool errors. Recorded demo results are still used when OPA is absent at the start; an OPA
+execution failure never silently falls back to them.
+
+See [ADR 0007](../decisions/0007-verifier-boundaries.md). Bundle formats, signed predicates,
+role boundaries and parity decisions are unchanged. Static SPA fallback checks resolved path
+containment, not string prefixes, before serving a requested file.
+
 ## Tests and extensions
 
-The reference matrix is 25 OPA policy tests, 1,102 Python tests with OPA and
-1,101 plus 1 skipped without OPA, 11 web tests, four Terraform configurations,
+The reference matrix is 25 OPA policy tests, 1,186 Python tests with OPA and
+1,185 plus 1 skipped without OPA, 24 web tests, four Terraform configurations,
 and a container smoke test. These counts are the current repo baseline; report
 the exact counts from your run.
 

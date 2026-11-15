@@ -18,6 +18,18 @@ For regulators, internal audit, external assessors, brokers and carriers reviewi
 The dashboard can also use **Also verify on server** in live mode. For a standalone
 demo bundle, use `foundry-demo --out /tmp/b --json` and `foundry-verify /tmp/b`.
 
+Python/API verification rejects malformed manifests and unsafe filesystem paths as a
+`structure` failure. Artifacts must be regular files, without symlink components, inside the
+bundle. Checked files share a 2,000,000-byte limit, including metadata; uploaded file bytes
+have the same total limit. Manifest shape and names are validated before artifact/key access.
+These filesystem restrictions do not describe the browser's in-memory verifier.
+
+If an available OPA executable fails, times out or returns invalid/empty test evidence,
+the demo pipeline stops before signing: the CLI reports an inconclusive verifier and the
+API returns 503 without a downloadable run. This is not a policy pass. An installation
+without OPA still labels its CI-recorded demo results as `recorded`; it does not establish
+a fresh local OPA run.
+
 ## Files in a generated bundle
 
 The API ZIP from the generated run contains `manifest.json`,

@@ -2,6 +2,10 @@
 
 ## 0.1.0 (unreleased, incubating)
 
+- Reject unsafe/malformed bundle manifests before artifact access; constrain verifier reads to
+  regular, non-symlink files inside the bundle with a cumulative 2,000,000-byte budget. Fix SPA
+  sibling-prefix path containment. Abort inconclusive OPA runs before bundle signing, with
+  internal execution deadlines and explicit CLI/API errors rather than a passing verdict.
 - Group Dependabot updates into one pull request per ecosystem per interval (weekly on Monday for
   GitHub Actions, npm and pip; monthly for cargo and docker) instead of one PR per package.
 - Container image moves to the estate's two standard bases: the web build stage on `node:22-alpine`
