@@ -138,8 +138,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       const created = await getJSON<RunSummary & { id: string }>(`${apiBase}/api/runs`, { method: "POST", headers: auth });
       const b = await getJSON<Bundle>(`${apiBase}/api/runs/${created.id}/bundle.json`);
       const full = created.mutation ? created : await getJSON<RunSummary>(`${apiBase}/api/runs/${created.id}`);
-      setRunId(created.id);
       loadBundle(b, full);
+      setRunId(created.id);
     } catch (e) {
       const m = e instanceof Error ? e.message : String(e);
       setError(m.startsWith("401") ? "This API needs an access token. Add it in Settings." : `Run failed: ${m}`);

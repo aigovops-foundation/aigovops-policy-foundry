@@ -60,7 +60,7 @@ def main():
                             req.fulfill(json={"ok": posts[-1] == demo})
                     elif url.path == "/api/runs":
                         creates.append({"url": request.url, "authorization": request.headers.get("authorization")})
-                        req.fulfill(status=201, json={**run, "id": "synthetic"})
+                        req.fulfill(status=201, json={**run, "id": f"synthetic-{len(creates)}"})
                     elif url.path.endswith("/bundle.json") and "/api/" in url.path:
                         req.fulfill(json={"files": None} if state["bad_run"] else demo)
                     elif request.url.startswith(base + "/"):
@@ -111,6 +111,12 @@ def main():
             expect(page.get_by_role("button", name="Download bundle.json", exact=True)).to_be_disabled()
             expect(page.get_by_role("button", name="Also verify on server")).to_be_disabled()
             page.get_by_role("button", name="Back to current bundle").click()
+            depth = 200000
+            deep = ('{"files":' + "[" * depth + "]" * depth + "}").encode()
+            file.set_input_files({"name": "deep.json", "mimeType": "application/json", "buffer": deep})
+            expect(page.get_by_text("Verification failed", exact=True)).to_be_visible()
+            expect(page.get_by_role("button", name="Download bundle.json", exact=True)).to_be_disabled()
+            page.get_by_role("button", name="Back to current bundle").click()
 
             def visit(path):
                 page.evaluate("path => location.hash = path", path)
@@ -139,6 +145,9 @@ def main():
             page.get_by_role("button", name="Run pipeline", exact=True).click()
             expect(page.get_by_text("Run failed: Invalid bundle structure; previous bundle retained", exact=False)).to_be_visible()
             state["bad_run"] = False
+            visit("/verify")
+            zip_link = page.get_by_role("link", name="Bundle .zip (with Python verifier)")
+            expect(zip_link).to_have_attribute("href", "https://foundry-b.invalid/api/runs/synthetic-2/bundle.zip")
             connect("http://remote.invalid")
             token.fill("synthetic-denied")
             expect(token).to_have_value("")
