@@ -32,7 +32,9 @@ export default function Verify() {
     setOwn({ name: f.name, bundle: null, res: { ok: false, receipts: [], receiptStatus: [], checks: [{ name: "structure", ok: false, detail: "Reading selected file" }] } });
     try {
       const b = JSON.parse(await f.text()) as Bundle;
-      if (selected === reading.current) setOwn({ name: f.name, bundle: b, res: verifyBundle(b) });
+      const res = verifyBundle(b);
+      const usable = !res.checks.some(c => c.name === "structure" && !c.ok);
+      if (selected === reading.current) setOwn({ name: f.name, bundle: usable ? b : null, res });
     } catch (e) {
       if (selected === reading.current) setOwn({ name: f.name, bundle: null, res: { ok: false, receipts: [], receiptStatus: [], checks: [{ name: "structure", ok: false, detail: "Not a bundle.json file" }] } });
     }
