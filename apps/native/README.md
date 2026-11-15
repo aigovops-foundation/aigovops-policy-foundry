@@ -17,5 +17,24 @@ Windows, preinstalled on 10/11; Xcode for macOS/iOS; JDK 17 + Android SDK/NDK fo
 CI builds unsigned artifacts for all five platforms in `.github/workflows/native.yml`. Store
 distribution needs Foundation-owned signing credentials and Review Circle sign-off.
 
+PR validation includes `web/**` as well as the shell/workflow, since native apps consume
+the shared dashboard. Simulator CI always uses a placeholder team, not signing secrets.
+Normal native builds fetch npm dependencies through `beforeBuildCommand` and may fetch
+Rust/platform dependencies. They are not hermetic offline checks by default.
+
+For a prepared-cache desktop check, first install platform prerequisites and explicitly
+prepare dependencies while network access is allowed: run `npm ci` in both `web` and
+`apps/native`, and `cargo fetch --manifest-path apps/native/src-tauri/Cargo.toml` from
+the repo root. Preserve that toolchain, Cargo cache/lock and both node_modules trees.
+Then build the web assets (`cd web && npm run build`) and, from `apps/native`, use:
+
+```sh
+npx --offline tauri build --no-bundle --no-sign --config '{"build":{"beforeBuildCommand":""}}' -- --offline
+```
+
+This bypasses the network-installing hook and fails on missing cached crates/tools;
+it does not provision mobile SDKs or establish device behavior. Run it only on a prepared
+host. The omnibus web/API verification does not claim this native build was executed.
+
 Identifier: `com.aigovopsfoundation.policyfoundry`. Icons: regenerate with `npm run icons` from
 `app-icon.png`.

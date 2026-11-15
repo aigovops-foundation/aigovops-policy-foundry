@@ -93,10 +93,30 @@ containment, not string prefixes, before serving a requested file.
 
 ## Tests and extensions
 
-The reference matrix is 25 OPA policy tests, 1,186 Python tests with OPA and
-1,185 plus 1 skipped without OPA, 24 web tests, four Terraform configurations,
-and a container smoke test. These counts are the current repo baseline; report
-the exact counts from your run.
+See [ADR 0008](../decisions/0008-evidence-and-release-integrity.md) for runtime
+validation, packet commitment and credential boundaries. The new parity cases
+cover empty, null, false, scalar and array delegations and malformed nested scopes.
+They follow existing Rego semantics; no existing corpus decision or policy rule changes.
+Malformed editor inputs are rejected locally before evaluation; raw engine parity is
+tested independently, including Rego's absent/false delegation behavior.
+
+Tag publication calls reusable CI for the exact revision before the protected
+`release` environment. Administrators must configure independent required reviewers;
+missing/unreadable protection metadata fails closed. See [Releasing](../../RELEASING.md).
+Native PR validation now includes `web/**`; dependency fetching and prepared-cache
+build instructions are in the [native README](../../apps/native/README.md).
+
+Optional browser regressions use exact-pinned Python dependencies in
+`web/tests/requirements-browser.txt`. Prepare those and Chromium in a network-enabled
+setup step, build the web app, then run
+`python web/tests/dashboard-browser.py --output <evidence-directory>` from the root.
+The runner serves loopback assets and intercepts fake API requests; every other
+destination is denied. It exercises selection/server/download consistency, token
+switching and validation feedback, and captures both viewport sizes in light/dark.
+
+The reference matrix includes OPA policy/parity tests, Python tests with and without
+OPA, web tests/build, four Terraform configurations and a container smoke test.
+Report exact counts from the current run rather than treating historical totals as a gate.
 
 - For a gate action, follow the [`foundry-gate-change` skill](../../.agents/skills/foundry-gate-change/SKILL.md).
 - For an API route, add coverage in `api/tests/test_api.py`; malformed input must

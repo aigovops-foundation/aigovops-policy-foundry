@@ -45,7 +45,7 @@ api/                      Python 3.11+ (FastAPI). Devin-deployable: app named `a
   foundry/verify_bundle.py Offline verifier (also copied into every bundle)
   foundry/devin_client.py Devin v3 adapter (dry-run by default)
   foundry/assets/         config/agents.yaml, policy/*.rego, prompts/, schemas/, examples/, parity/
-  tests/                  pytest: evidence, gate parity (1,033 cases), API e2e, demo bundle
+  tests/                  pytest: evidence, gate parity (1,043 cases), API e2e, demo bundle
 web/                      React 19 + Vite dashboard. Offline demo + live API mode. Hash routing.
   src/lib/evidence.ts     Same verifier in TypeScript (on-device verification)
   src/lib/gate.ts         Same gate in TypeScript (parity-tested against OPA)
@@ -78,7 +78,7 @@ docs/                     BLUEPRINT.md, HOSTING.md, decisions/ (ADRs)
 ## 5. Current state (v0.1.0)
 
 Done and tested in CI:
-- Gate (Rego + Python + TypeScript) with a 1,005-decision / 28-approval parity corpus.
+- Gate (Rego + Python + TypeScript) with a 1,015-decision / 28-approval parity corpus.
 - Evidence core, pipeline, offline verifier; tamper detection tests in Python and TypeScript.
 - FastAPI service with input validation, optional bearer token, path-traversal protection.
 - Dashboard: Overview, Gate playground, Evidence (with tamper demo), Verify, Underwriting, Agents,
