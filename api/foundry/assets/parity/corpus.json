@@ -5003,6 +5003,73 @@
    "agent": "manager",
    "action": "git.merge",
    "target": "ot/l1/plc"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {}
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": null
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": false
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": []
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": "invalid"
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": 7
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": null
+   }
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "policy_writer",
+    "parent_scope": null
+   }
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "policy_writer",
+    "parent_scope": 7,
+    "child_scope": [
+     "opa.test.local"
+    ]
+   }
+  },
+  {
+   "agent": "manager",
+   "action": "devin.session.create",
+   "delegation": {
+    "to": "policy_writer",
+    "parent_scope": [],
+    "child_scope": {
+     "one": "opa.test.local"
+    }
+   }
   }
  ],
  "approvals": [

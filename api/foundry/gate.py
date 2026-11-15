@@ -106,15 +106,19 @@ def _deny_set(inp: dict, data: dict) -> set[str]:
         deny.add("relay-bypass")
 
     d = inp.get("delegation")
-    if d:
+    if "delegation" in inp and d is not False:
+        d = d if isinstance(d, dict) else {}
         may = (agent or {}).get("may_delegate_to")
-        if not (may is not None and d.get("to") in may):
+        if d and not (may is not None and d.get("to") in may):
             deny.add("delegation-target-not-allowed")
         if d.get("parent_scope", False) is False:  # Rego `not x`: undefined or false only
             deny.add("delegation-missing-parent-scope")
-        parent = d.get("parent_scope") or []
+        parent = d.get("parent_scope", [])
+        parent = list(parent.values()) if isinstance(parent, dict) else parent if isinstance(parent, list) else []
         to_caps = (agents.get(d.get("to")) or {}).get("capabilities") or []
-        for c in d.get("child_scope", []) or []:
+        child = d.get("child_scope", [])
+        child = list(child.values()) if isinstance(child, dict) else child if isinstance(child, list) else []
+        for c in child:
             if c not in parent:
                 deny.add(f"scope-widening:{c}")
             if c not in to_caps:

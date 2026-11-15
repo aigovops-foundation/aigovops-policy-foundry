@@ -41,6 +41,11 @@ extra = [
     {"agent": "manager", "action": "git.merge", "target": "ot/l1/plc"},
 ]
 cases += extra
+cases += [{"agent": "manager", "action": "devin.session.create", "delegation": d}
+          for d in [{}, None, False, [], "invalid", 7, {"to": None},
+                    {"to": "policy_writer", "parent_scope": None},
+                    {"to": "policy_writer", "parent_scope": 7, "child_scope": ["opa.test.local"]},
+                    {"to": "policy_writer", "parent_scope": [], "child_scope": {"one": "opa.test.local"}}]]
 owner = {"subject": "u-alvarez", "groups": ["grp-ai-policy-owners"]}
 board = {"subject": "u-chen", "groups": ["grp-ai-governance-board"]}
 rando = {"subject": "u-x", "groups": ["grp-other"]}
