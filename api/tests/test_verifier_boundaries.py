@@ -109,7 +109,7 @@ def test_manifest_entry_limit(bundle, monkeypatch):
 
 def test_cumulative_bytes_include_metadata_and_enforce_exact_boundary(bundle, monkeypatch):
     artifacts = json.loads((bundle / "manifest.json").read_text())
-    checked = ["manifest.json", "statement.dsse.json", "receipts.ndjson", "checkpoint.json",
+    checked = ["manifest.json", "statement.dsse.json", "receipts.ndjson", "checkpoint.json", "underwriting_packet.json",
                "inclusion_bundle_signed.json", *["artifacts/" + rel for rel in artifacts],
                *["keys/" + p.name for p in (bundle / "keys").glob("*.pub.hex")]]
     size = sum((bundle / rel).stat().st_size for rel in checked)

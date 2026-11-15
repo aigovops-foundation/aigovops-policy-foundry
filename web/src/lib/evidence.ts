@@ -77,12 +77,38 @@ export type VerifyResult = { ok: boolean; checks: Check[]; receipts: Receipt[]; 
 
 const FORBIDDEN_BODY_KEYS = ["prompt", "response", "content", "raw", "email", "password", "secret"];
 
+function objectFields(v: any, strings: string[] = [], objects: string[] = [], arrays: string[] = []): asserts v is Record<string, any> {
+  if (!v || typeof v !== "object" || Array.isArray(v) || strings.some(k => typeof v[k] !== "string") ||
+      objects.some(k => !v[k] || typeof v[k] !== "object" || Array.isArray(v[k])) || arrays.some(k => !Array.isArray(v[k]))) throw new Error("Invalid object fields");
+}
+function integer(v: unknown, minimum = 0) {
+  if (!Number.isSafeInteger(v) || (v as number) < minimum) throw new Error("Expected nonnegative integer");
+}
+
+export function validatePacketDisplay(packet: Record<string, any>): void {
+  if ("risk_tier" in packet && !["T1", "T2", "T3", "T4"].includes(packet.risk_tier)) throw new Error("Invalid packet risk tier");
+  for (const value of Object.values(packet.pillars)) {
+    integer(value);
+    if ((value as number) > 10000) throw new Error("Invalid pillar coverage");
+  }
+}
+
 export function parseReceipts(ndjson: string): Receipt[] {
-  return ndjson.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
+  return ndjson.split("\n").filter((l) => l.trim()).map((l) => {
+    const r = JSON.parse(l);
+    objectFields(r, ["type", "key_id", "prev", "sig", "ts_ns"], ["body"]);
+    integer(r.counter, 1);
+    if (!/^[0-9]{1,30}$/.test(r.ts_ns)) throw new Error("Invalid receipt timestamp");
+    if ("request_id" in r.body) objectFields(r.body, ["request_id"]);
+    for (const k of ["approvers", "signers", "parent_scope", "child_scope"]) {
+      if (k in r.body && (!Array.isArray(r.body[k]) || r.body[k].some((s: unknown) => typeof s !== "string"))) throw new Error("Invalid receipt body array");
+    }
+    if (r.type === "policy_approval") objectFields(r.body, [], [], ["approvers"]);
+    return r as Receipt;
+  });
 }
 
 export function verifyBundle(b: Bundle): VerifyResult {
-  const f = b.files;
   const checks: Check[] = [];
   const add = (name: string, ok: boolean, detail: string) => checks.push({ name, ok, detail });
   const fail = (e: unknown): VerifyResult => ({
@@ -91,6 +117,10 @@ export function verifyBundle(b: Bundle): VerifyResult {
   });
 
   try {
+    objectFields(b, ["format"], ["files"]);
+    const f = b.files;
+    if (b.format !== "foundry.bundle+json/v0.1" || Object.values(f).some(v => typeof v !== "string") ||
+        Object.values(f).reduce((n, v) => n + utf8ToBytes(v).length, 0) > 2_000_000) throw new Error("Invalid bundle files or size");
     const keys = new Map<string, Uint8Array>();
     for (const [p, v] of Object.entries(f)) if (p.startsWith("keys/") && p.endsWith(".pub.hex")) {
       const raw = hexToBytes(v.trim());
@@ -98,6 +128,9 @@ export function verifyBundle(b: Bundle): VerifyResult {
     }
 
     const manifest = JSON.parse(f["manifest.json"]) as Record<string, string>;
+    objectFields(manifest);
+    if (!Object.keys(manifest).length || Object.keys(manifest).length > 1000 || Object.entries(manifest).some(([p, d]) =>
+      p.length > 4096 || /[\\:\u0000]/u.test(p) || p.split("/").some(s => !s || s === "." || s === "..") || typeof d !== "string" || !/^[0-9a-f]{64}$/.test(d))) throw new Error("Invalid manifest");
     const bad = Object.entries(manifest).filter(([rel, dg]) => {
       const c = f["artifacts/" + rel];
       return c === undefined || sha256Hex(utf8ToBytes(c)) !== dg;
@@ -105,6 +138,8 @@ export function verifyBundle(b: Bundle): VerifyResult {
     add("manifest", bad.length === 0, bad.length ? `digest mismatch: ${bad.join(", ")}` : `${Object.keys(manifest).length} artifacts match their digests`);
 
     const env = JSON.parse(f["statement.dsse.json"]);
+    objectFields(env, ["payload", "payloadType"], [], ["signatures"]);
+    for (const s of env.signatures) objectFields(s, ["keyid", "sig"]);
     const payload = b64d(env.payload);
     const t = utf8ToBytes(env.payloadType);
     const pae = concat(utf8ToBytes(`DSSEv1 ${t.length} `), t, utf8ToBytes(` ${payload.length} `), payload);
@@ -114,12 +149,15 @@ export function verifyBundle(b: Bundle): VerifyResult {
       if (pk && edVerify(b64d(s.sig), pae, pk)) good.add(s.keyid);
     }
     const st = JSON.parse(new TextDecoder().decode(payload));
+    objectFields(st, [], [], ["subject"]);
+    for (const s of st.subject) { objectFields(s, ["name"], ["digest"]); objectFields(s.digest, ["sha256"]); }
     const subj: Record<string, string> = Object.fromEntries(st.subject.map((s: any) => [s.name, s.digest.sha256]));
-    const subjOk = Object.keys(subj).length === Object.keys(manifest).length && Object.entries(manifest).every(([k, v]) => subj[k] === v);
+    const subjOk = st.subject.length === Object.keys(manifest).length && Object.keys(subj).length === Object.keys(manifest).length && Object.entries(manifest).every(([k, v]) => subj[k] === v);
     add("statement", good.size >= 2 && subjOk,
       good.size < 2 ? `DSSE threshold not met (${good.size}/2)` : !subjOk ? "signed subjects do not match manifest" : `DSSE 2-of-${env.signatures.length} signatures valid`);
 
     const receipts = parseReceipts(f["receipts.ndjson"]);
+    if (!receipts.length) throw new Error("Empty receipt log");
     const status: ReceiptStatus[] = [];
     let prev = "0".repeat(64), expected = 1;
     const errs: string[] = [];
@@ -142,6 +180,8 @@ export function verifyBundle(b: Bundle): VerifyResult {
     add("non-egress", leaks.length === 0, leaks.length ? `content-like fields in receipts ${leaks}` : "receipt bodies hold commitments and digests only");
 
     const cp = JSON.parse(f["checkpoint.json"]);
+    objectFields(cp, ["log", "root", "ts_ns", "witness_keyid", "witness_sig"]);
+    integer(cp.size);
     const leaves = receipts.map((r) => jcs(r as Json));
     const rootOk = merkleRoot(leaves) === cp.root && cp.size === leaves.length;
     const sth = { log: cp.log, size: cp.size, root: cp.root, ts_ns: cp.ts_ns };
@@ -150,11 +190,29 @@ export function verifyBundle(b: Bundle): VerifyResult {
     add("checkpoint", rootOk && witOk, rootOk && witOk ? `witness-signed Merkle root ${cp.root.slice(0, 16)}` : !rootOk ? "Merkle root/size mismatch" : "witness signature invalid");
 
     const inc = JSON.parse(f["inclusion_bundle_signed.json"]);
+    objectFields(inc, [], [], ["proof"]);
+    integer(inc.index); integer(inc.size, 1);
+    if (inc.proof.some((p: unknown) => typeof p !== "string" || !/^[0-9a-f]{64}$/.test(p))) throw new Error("Invalid inclusion proof");
     const br = receipts[inc.index];
-    const incOk = !!br && br.type === "bundle_signed" &&
+    const incOk = inc.size === cp.size && !!br && br.type === "bundle_signed" &&
       verifyInclusion(leaves[inc.index], inc.index, inc.size, inc.proof, cp.root) &&
       br.body.envelope_sha256 === sha256Hex(jcs(env));
     add("inclusion", incOk, incOk ? "bundle_signed receipt proven in log and bound to this envelope" : "inclusion proof or envelope binding failed");
+
+    let packetOk = false;
+    try {
+      const packet = JSON.parse(f["underwriting_packet.json"]);
+      objectFields(packet, ["tenant", "receipt_log_root"], ["period", "pillars", "metrics"], ["system_inventory", "incidents", "limitations"]);
+      objectFields(packet.period, ["start", "end"]);
+      validatePacketDisplay(packet);
+      for (const k of ["gate_coverage_bp", "denial_rate_bp", "hitl_override_rate_bp", "attestation_gap_count", "median_review_latency_s"]) integer(packet.metrics[k]);
+      for (const k of ["data_privacy", "security", "safety", "reliability", "accountability", "society"]) integer(packet.pillars[k]);
+      if (!packet.limitations.length || packet.limitations.some((s: unknown) => typeof s !== "string")) throw new Error("Invalid packet limitations");
+      const commitments = receipts.map((r, i) => ({ r, i })).filter(({ r }) => r.type === "underwriting_packet");
+      packetOk = incOk && !errs.length && rootOk && witOk && commitments.length === 1 && commitments[0].i > inc.index &&
+        commitments[0].r.body.packet_sha256 === sha256Hex(jcs(packet));
+    } catch { /* A packet failure remains an explicit named check. */ }
+    add("underwriting-packet", packetOk, packetOk ? "Packet matches its signed, checkpointed receipt after bundle signing" : "Packet missing, malformed, or not bound to the signed receipt log");
 
     return { ok: checks.every((c) => c.ok), checks, receipts, receiptStatus: status };
   } catch (e) {
