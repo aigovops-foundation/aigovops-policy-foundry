@@ -1,41 +1,62 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Check, X, Upload, Download } from "lucide-react";
 import { useStore } from "../lib/store";
-import { verifyBundle, type Bundle, type VerifyResult } from "../lib/evidence";
+import { sha256Hex, verifyBundle, type Bundle, type VerifyResult } from "../lib/evidence";
 
 const NAMES: Record<string, string> = {
   manifest: "Files match their digests", statement: "Two signatures on the statement", receipts: "Receipt chain intact",
+  "underwriting-packet": "Packet matches its signed receipt",
   "non-egress": "No raw content in receipts", checkpoint: "Witnessed log checkpoint", inclusion: "Signing receipt is in the log", structure: "Bundle structure",
 };
 
 export default function Verify() {
   const { bundle, mode, apiBase, runId } = useStore();
-  const [own, setOwn] = useState<{ name: string; res: VerifyResult } | null>(null);
+  const [own, setOwn] = useState<{ name: string; bundle: Bundle | null; res: VerifyResult } | null>(null);
   const [over, setOver] = useState(false);
-  const [server, setServer] = useState<string | null>(null);
+  const [server, setServer] = useState<{ key: string; text: string } | null>(null);
+  const generation = useRef(0);
+  const reading = useRef(0);
   const input = useRef<HTMLInputElement>(null);
   const current = bundle ? verifyBundle(bundle) : null;
   const shown = own?.res ?? current;
+  const active = own ? own.bundle : bundle;
+  const label = own?.name ?? "Current bundle";
+  const bytes = active ? JSON.stringify(active) : "";
+  const digest = bytes ? sha256Hex(new TextEncoder().encode(bytes)) : "";
+  const selectionKey = `${apiBase}:${digest}`;
+  useEffect(() => { generation.current++; setServer(null); }, [active, apiBase]);
 
   const readFile = async (f: File) => {
+    const selected = ++reading.current;
+    generation.current++; setServer(null);
+    setOwn({ name: f.name, bundle: null, res: { ok: false, receipts: [], receiptStatus: [], checks: [{ name: "structure", ok: false, detail: "Reading selected file" }] } });
     try {
       const b = JSON.parse(await f.text()) as Bundle;
-      setOwn({ name: f.name, res: verifyBundle(b) });
+      const res = verifyBundle(b);
+      const usable = !res.checks.some(c => c.name === "structure" && !c.ok);
+      if (selected === reading.current) setOwn({ name: f.name, bundle: usable ? b : null, res });
     } catch (e) {
-      setOwn({ name: f.name, res: { ok: false, receipts: [], receiptStatus: [], checks: [{ name: "structure", ok: false, detail: "Not a bundle.json file" }] } });
+      if (selected === reading.current) setOwn({ name: f.name, bundle: null, res: { ok: false, receipts: [], receiptStatus: [], checks: [{ name: "structure", ok: false, detail: "Not a bundle.json file" }] } });
     }
   };
   const download = () => {
-    if (!bundle) return;
+    if (!active) return;
     const a = document.createElement("a");
-    a.href = URL.createObjectURL(new Blob([JSON.stringify(bundle)], { type: "application/json" }));
-    a.download = "foundry-bundle.json"; a.click();
+    a.href = URL.createObjectURL(new Blob([bytes], { type: "application/json" }));
+    a.download = own?.name ?? "foundry-bundle.json"; a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   };
   const serverCheck = async () => {
-    const r = await fetch(`${apiBase}/api/verify`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(bundle) });
-    const j = await r.json();
-    setServer(r.ok ? (j.ok ? "Server verifier: OK" : "Server verifier: FAILED") : `Server error ${r.status}`);
+    if (!active) return;
+    const request = ++generation.current;
+    setServer(null);
+    try {
+      const r = await fetch(`${apiBase}/api/verify`, { method: "POST", redirect: "error", headers: { "Content-Type": "application/json" }, body: bytes });
+      const j = await r.json();
+      if (request === generation.current) setServer({ key: selectionKey, text: `${label} (${digest.slice(0, 12)}): ${r.ok ? (j.ok ? "Server verifier: OK" : "Server verifier: FAILED") : `Server error ${r.status}`}` });
+    } catch {
+      if (request === generation.current) setServer({ key: selectionKey, text: `${label} (${digest.slice(0, 12)}): Server verification unavailable` });
+    }
   };
 
   return (
@@ -52,11 +73,11 @@ export default function Verify() {
           <input ref={input} type="file" accept="application/json,.json" hidden onChange={(e) => e.target.files?.[0] && readFile(e.target.files[0])} />
         </div>
         <div className="row" style={{ marginTop: "var(--space-4)" }}>
-          {own && <button className="btn" onClick={() => setOwn(null)}>Back to current bundle</button>}
-          <button className="btn" onClick={download}><Download size={16} /> Download bundle.json</button>
-          {mode === "live" && runId && <a className="btn" href={`${apiBase}/api/runs/${runId}/bundle.zip`}><Download size={16} /> Bundle .zip (with Python verifier)</a>}
-          {mode === "live" && <button className="btn" onClick={serverCheck}>Also verify on server</button>}
-          {server && <span className="small mono">{server}</span>}
+          {own && <button className="btn" onClick={() => { reading.current++; generation.current++; setServer(null); setOwn(null); }}>Back to current bundle</button>}
+          <button className="btn" disabled={!active} onClick={download}><Download size={16} /> Download bundle.json</button>
+          {mode === "live" && runId && !own && <a className="btn" href={`${apiBase}/api/runs/${runId}/bundle.zip`}><Download size={16} /> Bundle .zip (with Python verifier)</a>}
+          {mode === "live" && <button className="btn" disabled={!active} onClick={serverCheck}>Also verify on server</button>}
+          {server?.key === selectionKey && <span className="small mono" role="status">{server.text}</span>}
         </div>
       </section>
 

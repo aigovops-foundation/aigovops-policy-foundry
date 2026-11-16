@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useStore } from "../lib/store";
-import { approvalErrors, decide, explain, type GateInput } from "../lib/gate";
+import { approvalErrors, decide, explain, isGateInput, type GateInput } from "../lib/gate";
 
 const PRESETS: { label: string; input: GateInput }[] = [
   { label: "Normal branch push", input: { agent: "policy_writer", action: "git.push", target: "policy-src/branches/foundry/REQ-1042-iter1" } },
@@ -34,7 +34,7 @@ export default function Gate() {
 
   const parsed: GateInput | null = useMemo(() => {
     if (raw === null) return input;
-    try { const v = JSON.parse(raw); return v && typeof v.agent === "string" && typeof v.action === "string" ? v : null; } catch { return null; }
+    try { const v = JSON.parse(raw); return isGateInput(v) ? v : null; } catch { return null; }
   }, [raw, input]);
   if (!manifest) return null;
   const d = parsed ? decide(parsed, manifest) : null;
@@ -80,7 +80,7 @@ export default function Gate() {
           <summary className="small muted" style={{ cursor: "pointer" }}>Edit raw request (delegation, on_behalf_of, depth)</summary>
           <textarea className="input" aria-label="Raw gate request JSON" style={{ marginTop: "var(--space-2)" }}
             value={raw ?? JSON.stringify(input, null, 2)} onChange={(e) => { setRaw(e.target.value); setServer(null); }} />
-          {parsed === null && <p className="xs" style={{ color: "var(--deny)" }}>Needs valid JSON with agent and action.</p>}
+          {parsed === null && <p className="xs" role="alert" style={{ color: "var(--deny)" }}>Invalid request structure. Check agent/action strings, delegation scope arrays and nonnegative integer limits.</p>}
         </details>
       </section>
 

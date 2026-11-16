@@ -15,6 +15,13 @@ Gate → **Try an action** accepts raw JSON. **Check on server** needs a live AP
 connection; the offline dashboard still evaluates its local demo. Evidence →
 **Tamper with it** shows verification fail on changed demo data.
 
+Raw gate JSON with invalid nested types stays an editor error instead of being evaluated.
+An empty delegation evaluates to a deny under the authoritative policy. Settings keeps
+tokens in memory only: changing the normalized API destination (including its path) or
+selecting offline clears the token and any consent to remote plaintext HTTP. Connecting
+does not forward a token; enter it again only for the selected API. Remote HTTP requires
+an explicit unencrypted-transmission checkbox before a token can be entered.
+
 The API's interactive Swagger page is `/docs`. Open it on a running API and use
 **Try it out** for routes such as `POST /api/gate/evaluate`. See the
 [API reference](Pro-code-developers.md#api).

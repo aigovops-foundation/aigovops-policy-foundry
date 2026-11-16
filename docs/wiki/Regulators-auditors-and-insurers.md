@@ -18,6 +18,11 @@ For regulators, internal audit, external assessors, brokers and carriers reviewi
 The dashboard can also use **Also verify on server** in live mode. For a standalone
 demo bundle, use `foundry-demo --out /tmp/b --json` and `foundry-verify /tmp/b`.
 
+An uploaded selection is retained: displayed checks, JSON download and server verification
+all use that same bundle. Server results identify its filename and SHA-256 prefix and are
+cleared when the selection or API changes. ZIP download is offered only for the current run,
+not as a substitute for an uploaded file. Invalid JSON disables download/server actions.
+
 Python/API verification rejects malformed manifests and unsafe filesystem paths as a
 `structure` failure. Artifacts must be regular files, without symlink components, inside the
 bundle. Checked files share a 2,000,000-byte limit, including metadata; uploaded file bytes
@@ -54,6 +59,11 @@ Neither bundle contains private signing keys.
 | `non-egress` | Receipt bodies omit raw-content fields checked by the verifier | That no other system retained data |
 | `checkpoint` | Receipt log root and size match a witness-signed checkpoint | Independent notary service or full log completeness |
 | `inclusion` | The bundle-signing receipt is included and binds the statement | Policy quality, legal status or safety |
+| `underwriting-packet` | Packet canonical digest matches exactly one signed, checkpointed receipt after bundle signing | Accuracy of self-assessed metrics or a release approval |
+
+Missing, modified, swapped or malformed packets fail explicitly. Underwriting metrics are
+hidden unless bundle verification, including packet integrity, succeeds. Both verifiers
+validate consumed JSON structures; malformed objects fail recoverably rather than crashing.
 
 ## What a failure looks like
 

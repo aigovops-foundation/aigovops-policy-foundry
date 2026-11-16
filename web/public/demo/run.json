@@ -1,7 +1,7 @@
 {
  "request_id": "REQ-1042",
  "receipts": 20,
- "root": "df2773c7849b6f983c69fc20ab09217ec7b7e37dcddee3d85e92ef4a64a905ce",
+ "root": "dfa2512c231916b62cd42fa91e3481785dfcb6cde6212099f1f1d2bcef8aaf82",
  "verdict": "pass",
  "coverage_bp": 10000,
  "mutation": "7/7",

@@ -70,7 +70,7 @@ function Shell() {
         <header className="topbar">
           <h1>{title}</h1>
           <span className="spacer" />
-          {result && (
+          {result && !loc.startsWith("/verify") && (
             <span className={`pill ${result.ok ? "ok" : "bad"}`} title="Bundle verification on this device">
               <BadgeCheck size={14} aria-hidden /> {result.ok ? "Verified" : "Not verified"}
             </span>

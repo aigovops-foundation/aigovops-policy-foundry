@@ -248,7 +248,7 @@ def verify_bundle(b: BundleJSON) -> dict:
             raise HTTPException(422, f"unsafe path in bundle: {rel!r}")
     try:
         validate_manifest(json.loads(b.files.get("manifest.json", "")))
-    except ValueError as e:
+    except (ValueError, RecursionError) as e:
         return {"ok": False, "checks": [{"name": "structure", "ok": False, "detail": str(e)}]}
     with tempfile.TemporaryDirectory() as tmp:
         root = pathlib.Path(tmp)

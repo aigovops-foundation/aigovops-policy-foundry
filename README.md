@@ -45,7 +45,7 @@ The dashboard works fully offline with bundled demo evidence. Open **Evidence**,
 
 - **Dashboard** (`web/`): React app with on-device verification. Same code runs in browsers and the native apps.
 - **API** (`api/`): FastAPI. Gate, approvals, demo pipeline runs, bundles (JSON and zip), server-side verification, dry-run Devin payloads. OpenAPI docs at `/docs`.
-- **Gate** (`api/foundry/assets/policy/`): Rego is authoritative. Python and TypeScript ports are held to OPA's answers by a 1,033-case parity corpus in CI.
+- **Gate** (`api/foundry/assets/policy/`): Rego is authoritative. Python and TypeScript ports are held to OPA's answers by a 1,043-case parity corpus in CI.
 - **Evidence core**: RFC 8785 canonical JSON, Ed25519, keyed commitments, hash-chained receipts, RFC 6962 Merkle proofs, DSSE with two signatures.
 - **Native apps** (`apps/native/`): Tauri 2 shell for desktop and mobile.
 - **Deploy** (`deploy/`, `infra/`): container, Terraform for GCP, Azure and AWS, Kubernetes, Fly.io, and the PrivateLink design for Devin's Customer Dedicated Deployment.

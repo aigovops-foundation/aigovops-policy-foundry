@@ -1,5 +1,6 @@
 import { AlertTriangle, Lock } from "lucide-react";
 import { useStore } from "../lib/store";
+import { validatePacketDisplay } from "../lib/evidence";
 
 const PILLARS: Record<string, string> = {
   data_privacy: "Data & privacy", security: "Security", safety: "Safety",
@@ -8,9 +9,11 @@ const PILLARS: Record<string, string> = {
 const pct = (bp: number) => `${(bp / 100).toFixed(bp % 100 ? 2 : 0)}%`;
 
 export default function Underwriting() {
-  const { bundle } = useStore();
+  const { bundle, result } = useStore();
   if (!bundle) return null;
+  if (!result?.ok || !result.checks.some(c => c.name === "underwriting-packet" && c.ok)) return <div className="page"><section className="card" role="alert"><h2>Packet integrity not verified</h2><p>Verify the bundle before relying on its underwriting metrics.</p></section></div>;
   const p = JSON.parse(bundle.files["underwriting_packet.json"]);
+  validatePacketDisplay(p);
   const m = p.metrics;
   return (
     <div className="page">

@@ -6522,6 +6522,63 @@
     "ot-zone-conduit"
    ],
    "result": "deny"
+  },
+  {
+   "reasons": [
+    "delegation-missing-parent-scope"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "delegation-missing-parent-scope"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "delegation-missing-parent-scope"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "delegation-missing-parent-scope"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "delegation-missing-parent-scope"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "delegation-missing-parent-scope",
+    "delegation-target-not-allowed"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [],
+   "result": "allow"
+  },
+  {
+   "reasons": [
+    "scope-widening:opa.test.local"
+   ],
+   "result": "deny"
+  },
+  {
+   "reasons": [
+    "scope-widening:opa.test.local"
+   ],
+   "result": "deny"
   }
  ],
  "approvals": [

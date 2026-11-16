@@ -1,4 +1,5 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { authorizationHeaders, changeDestination, normalizeDestination, type Connection } from "./connection";
 import { verifyBundle, type Bundle, type VerifyResult } from "./evidence";
 import type { Manifest } from "./gate";
 
@@ -13,6 +14,7 @@ export type Mode = "demo" | "live";
 type Store = {
   mode: Mode; apiBase: string; setApiBase: (u: string) => Promise<boolean>;
   token: string; setToken: (t: string) => void;
+  allowInsecure: boolean; setAllowInsecure: (allow: boolean) => void;
   manifest: Manifest | null; run: RunSummary | null; bundle: Bundle | null; result: VerifyResult | null;
   runId: string | null; busy: boolean; error: string | null;
   visited: Set<string>; recordVisit: (location: string) => void;
@@ -32,7 +34,7 @@ export const useStore = () => {
 const ENV_API = (import.meta.env.VITE_API_BASE as string | undefined)?.replace(/\/$/, "") ?? "";
 
 async function getJSON<T>(url: string, init?: RequestInit): Promise<T> {
-  const r = await fetch(url, { ...init, headers: { "Content-Type": "application/json", ...(init?.headers || {}) } });
+  const r = await fetch(url, { ...init, redirect: "error", headers: { "Content-Type": "application/json", ...(init?.headers || {}) } });
   if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
   return r.json() as Promise<T>;
 }
@@ -51,8 +53,14 @@ async function probe(base: string): Promise<boolean> {
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<Mode>("demo");
-  const [apiBase, setBase] = useState("");
-  const [token, setToken] = useState(""); // memory only; never persisted in the web build
+  const [connection, setConnection] = useState<Connection>({ base: "", token: "", allowInsecure: false });
+  const { base: apiBase, token, allowInsecure } = connection;
+  const attempt = useRef(0);
+  const setToken = useCallback((t: string) => {
+    try { authorizationHeaders({ ...connection, token: t }); setConnection({ ...connection, token: t }); setError(null); }
+    catch (e) { setError(String(e instanceof Error ? e.message : e)); }
+  }, [connection]);
+  const setAllowInsecure = useCallback((allow: boolean) => setConnection(c => ({ ...c, token: "", allowInsecure: allow })), []);
   const [manifest, setManifest] = useState<Manifest | null>(null);
   const [run, setRun] = useState<RunSummary | null>(null);
   const [bundle, setBundle] = useState<Bundle | null>(null);
@@ -76,9 +84,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const loadBundle = useCallback((b: Bundle, r?: RunSummary | null) => {
+    const checked = verifyBundle(b);
+    if (checked.checks.some(c => c.name === "structure" && !c.ok)) throw new Error("Invalid bundle structure; previous bundle retained");
     setBundle(b);
     setPristine(null);
-    setResult(verifyBundle(b));
+    setResult(checked);
     if (r !== undefined) setRun(r);
   }, []);
   // Tamper demo: keep the untouched bundle so the user can restore it from any screen.
@@ -94,24 +104,29 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     (async () => {
+      const generation = attempt.current;
       const [m, r, b] = await Promise.all([
         getJSON<Manifest>("./demo/agents.json"), getJSON<RunSummary>("./demo/run.json"), getJSON<Bundle>("./demo/bundle.json"),
       ]);
       setManifest(m);
       loadBundle(b, r);
       for (const cand of [ENV_API, ""]) {
+        if (generation !== attempt.current) break;
         if (cand === "" && ENV_API) continue;
-        if (await probe(cand)) { setBase(cand); setMode("live"); break; }
+        if (await probe(cand) && generation === attempt.current) { setConnection(c => changeDestination(c, cand)); setMode("live"); break; }
       }
     })().catch((e) => setError(String(e)));
   }, [loadBundle]);
 
   const setApiBase = useCallback(async (u: string) => {
-    const base = u.trim().replace(/\/$/, "");
-    if (!base) { setBase(""); setMode("demo"); return true; }
-    if (!/^https?:\/\//.test(base)) { setError("API URL must start with http:// or https://"); return false; }
+    let base: string;
+    try { base = normalizeDestination(u); }
+    catch (e) { setError(String(e instanceof Error ? e.message : e)); return false; }
+    const generation = ++attempt.current;
+    if (!base) { setConnection(c => changeDestination(c, "")); setRunId(null); setMode("demo"); setError(null); return true; }
     const ok = await probe(base);
-    if (ok) { setBase(base); setMode("live"); setError(null); } else setError(`No Policy Foundry API at ${base}`);
+    if (generation !== attempt.current) return false;
+    if (ok) { setConnection(c => changeDestination(c, base)); setRunId(null); setMode("live"); setError(null); } else setError(`No Policy Foundry API at ${base}`);
     return ok;
   }, []);
 
@@ -119,24 +134,24 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     if (mode !== "live") return;
     setBusy(true); setError(null);
     try {
-      const auth: Record<string, string> = token ? { Authorization: `Bearer ${token}` } : {};
+      const auth = authorizationHeaders(connection);
       const created = await getJSON<RunSummary & { id: string }>(`${apiBase}/api/runs`, { method: "POST", headers: auth });
       const b = await getJSON<Bundle>(`${apiBase}/api/runs/${created.id}/bundle.json`);
       const full = created.mutation ? created : await getJSON<RunSummary>(`${apiBase}/api/runs/${created.id}`);
-      setRunId(created.id);
       loadBundle(b, full);
+      setRunId(created.id);
     } catch (e) {
       const m = e instanceof Error ? e.message : String(e);
       setError(m.startsWith("401") ? "This API needs an access token. Add it in Settings." : `Run failed: ${m}`);
     }
     finally { setBusy(false); }
-  }, [mode, apiBase, token, loadBundle]);
+  }, [mode, apiBase, connection, loadBundle]);
 
   const value = useMemo<Store>(() => ({
-    mode, apiBase, setApiBase, token, setToken, manifest, run, bundle, result, runId, busy, error, visited, recordVisit, loadBundle, newRun,
+    mode, apiBase, setApiBase, token, setToken, allowInsecure, setAllowInsecure, manifest, run, bundle, result, runId, busy, error, visited, recordVisit, loadBundle, newRun,
     tamperWith, restore, tampered: pristine !== null,
     theme, toggleTheme: () => setTheme((t) => (t === "dark" ? "light" : "dark")),
-  }), [mode, apiBase, setApiBase, token, manifest, run, bundle, result, runId, busy, error, visited, recordVisit, loadBundle, newRun, tamperWith, restore, pristine, theme]);
+  }), [mode, apiBase, setApiBase, token, setToken, allowInsecure, setAllowInsecure, manifest, run, bundle, result, runId, busy, error, visited, recordVisit, loadBundle, newRun, tamperWith, restore, pristine, theme]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

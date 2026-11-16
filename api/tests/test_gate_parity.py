@@ -28,3 +28,8 @@ def test_glob_semantics():
     assert gate.glob_match("a/*", "a/b") and not gate.glob_match("a/*", "a/b/c")
     assert gate.glob_match("a/**", "a/b/c") and gate.glob_match("x:p/*", "x:p/q")
     assert not gate.glob_match("a.b", "aXb")
+
+
+def test_nonempty_delegation_missing_target_does_not_gain_an_allow():
+    assert gate.decide_py({"agent": "manager", "action": "devin.session.create",
+                           "delegation": {"parent_scope": []}})["result"] == "deny"

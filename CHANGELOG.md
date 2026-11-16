@@ -2,6 +2,16 @@
 
 ## 0.1.0 (unreleased, incubating)
 
+- Bind underwriting packets to their signed, checkpointed receipt and validate consumed
+  runtime JSON shapes in both verifiers. Hide unverified packet metrics. Keep uploaded
+  Verify selections consistent across display, download and server checks, with stale-response guards.
+- Align empty/null/malformed delegation evaluation in Python and TypeScript with unchanged
+  Rego; extend the OPA parity corpus without changing existing decisions.
+- Scope memory-only API tokens to normalized destinations; clear them on switching/offline,
+  require explicit remote plaintext HTTP consent and reject authenticated redirects.
+- Require reusable CI on the tagged revision and independently protected release approval
+  before image publication. Include shared web changes in unsigned native PR validation.
+
 - Reject unsafe/malformed bundle manifests before artifact access; constrain verifier reads to
   regular, non-symlink files inside the bundle with a cumulative 2,000,000-byte budget. Fix SPA
   sibling-prefix path containment. Abort inconclusive OPA runs before bundle signing, with

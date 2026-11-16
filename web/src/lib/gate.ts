@@ -8,10 +8,27 @@ export type Manifest = {
 };
 export type GateInput = {
   agent: string; action: string; target?: string; on_behalf_of?: string;
-  delegation?: { to?: string; parent_scope?: string[] | false; child_scope?: string[] };
+  delegation?: { to?: string; parent_scope?: string[] | false; child_scope?: string[] } | null | false;
   depth?: number; identical_call_count?: number;
 };
 export type Decision = { result: "allow" | "deny" | "escalate"; reasons: string[] };
+
+export function isGateInput(v: unknown): v is GateInput {
+  if (!v || typeof v !== "object" || Array.isArray(v)) return false;
+  const i = v as Record<string, unknown>;
+  if (typeof i.agent !== "string" || !i.agent || typeof i.action !== "string" || !i.action) return false;
+  if (["target", "on_behalf_of"].some(k => k in i && typeof i[k] !== "string")) return false;
+  if (["depth", "identical_call_count"].some(k => k in i && (!Number.isSafeInteger(i[k]) || (i[k] as number) < 0))) return false;
+  if ("delegation" in i) {
+    if (!i.delegation || typeof i.delegation !== "object" || Array.isArray(i.delegation)) return false;
+    const d = i.delegation as Record<string, unknown>;
+    if (Object.keys(d).length && typeof d.to !== "string") return false;
+    if ("to" in d && typeof d.to !== "string") return false;
+    if (["parent_scope", "child_scope"].some(k => k in d && !(k === "parent_scope" && d[k] === false) && (!Array.isArray(d[k]) || !(d[k] as unknown[]).every(c => typeof c === "string")))) return false;
+    if (Object.keys(d).some(k => !["to", "parent_scope", "child_scope"].includes(k))) return false;
+  }
+  return Object.keys(i).every(k => ["agent", "action", "target", "on_behalf_of", "delegation", "depth", "identical_call_count"].includes(k));
+}
 
 export const HUMAN_ONLY = new Set(["policy.approve", "artifact.sign", "git.merge", "underwriting.release"]);
 
@@ -56,16 +73,17 @@ export function decide(i: GateInput, m: Manifest): Decision {
   if (typeof i.target === "string" && i.target.startsWith("ot/")) deny.add("ot-zone-conduit");
   if (has(m.agents, i.on_behalf_of) && forbiddenHits(m.agents[i.on_behalf_of], i).length) deny.add("relay-bypass");
 
-  const d = i.delegation;
-  if (d) {
+  if (Object.hasOwn(i, "delegation") && i.delegation !== false && i.delegation !== undefined) {
+    const d = (i.delegation && typeof i.delegation === "object" && !Array.isArray(i.delegation) ? i.delegation : {}) as Record<string, any>;
     const may = agent?.may_delegate_to;
-    if (!(may && d.to !== undefined && may.includes(d.to))) deny.add("delegation-target-not-allowed");
+    if (Object.keys(d).length && !(may && may.includes(d.to))) deny.add("delegation-target-not-allowed");
     if (d.parent_scope === undefined || d.parent_scope === false) deny.add("delegation-missing-parent-scope");
-    const parent = Array.isArray(d.parent_scope) ? d.parent_scope : [];
+    const values = (v: unknown): unknown[] => Array.isArray(v) ? v : v && typeof v === "object" ? Object.values(v) : [];
+    const parent = values(d.parent_scope);
     const toCaps = (has(m.agents, d.to) ? m.agents[d.to].capabilities : undefined) ?? [];
-    for (const c of d.child_scope ?? []) {
+    for (const c of values(d.child_scope)) {
       if (!parent.includes(c)) deny.add(`scope-widening:${c}`);
-      if (!toCaps.includes(c)) deny.add(`exceeds-role-capability:${c}`);
+      if (!toCaps.includes(c as string)) deny.add(`exceeds-role-capability:${c}`);
     }
   }
   if ((i.depth ?? 0) > m.runtime_limits.max_recursion_depth) deny.add("recursion-depth-exceeded");

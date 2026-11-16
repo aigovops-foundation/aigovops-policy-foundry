@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useStore } from "../lib/store";
 import { openExternal, REPO } from "../lib/links";
+import { insecureDestination } from "../lib/connection";
 
 export default function Settings() {
-  const { mode, apiBase, setApiBase, error, theme, toggleTheme, token, setToken } = useStore();
+  const { mode, apiBase, setApiBase, error, theme, toggleTheme, token, setToken, allowInsecure, setAllowInsecure } = useStore();
   const [url, setUrl] = useState(apiBase);
   const [msg, setMsg] = useState<string | null>(null);
   return (
@@ -19,6 +20,8 @@ export default function Settings() {
           Mode: <b>{mode === "live" ? `Live API ${apiBase || "(same origin)"}` : "Offline demo"}</b>
           {msg && <> · {msg}</>}{error && <span style={{ color: "var(--deny)" }}> · {error}</span>}
         </p>
+        <p className="small muted">Tokens stay in memory and are cleared when the API destination changes or the offline demo is selected.</p>
+        {insecureDestination(apiBase) && <label className="small"><input type="checkbox" checked={allowInsecure} onChange={e => setAllowInsecure(e.target.checked)} /> Allow sending a token unencrypted to this remote HTTP API</label>}
         <label className="field" style={{ maxWidth: 520 }}>Access token (if the API requires one)
           <input className="input mono" type="password" autoComplete="off" value={token} onChange={(e) => setToken(e.target.value)} placeholder="Kept in memory only" />
         </label>
