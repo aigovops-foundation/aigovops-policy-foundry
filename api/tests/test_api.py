@@ -82,9 +82,47 @@ def test_verify_garbage_is_4xx_or_structured():
     assert r.status_code == 200 and r.json()["ok"] is False
 
 
+@pytest.mark.parametrize("manifest", [[], {}, {"/synthetic/outside": "0" * 64}, {"../outside": "0" * 64},
+                                     {"safe": "not-a-digest"}])
+def test_invalid_manifest_rejected_before_materializing_files(monkeypatch, manifest):
+    def forbidden(*args, **kwargs):
+        pytest.fail("invalid manifest must be rejected before filesystem access")
+
+    monkeypatch.setattr("app.main.tempfile.TemporaryDirectory", forbidden)
+    r = c.post("/api/verify", json={"format": "foundry.bundle+json/v0.1",
+                                  "files": {"manifest.json": json.dumps(manifest)}})
+    assert r.status_code == 200
+    assert r.json()["ok"] is False and r.json()["checks"][0]["name"] == "structure"
+
+
+def test_verify_byte_limit_counts_utf8_bytes():
+    r = c.post("/api/verify", json={"format": "foundry.bundle+json/v0.1",
+                                  "files": {"manifest.json": "é" * 1_000_001}})
+    assert r.status_code == 413
+
+
 def test_unknown_run_404():
     assert c.get("/api/runs/000000000000").status_code == 404
     assert c.get("/api/runs/../../x").status_code == 404
+
+
+def test_inconclusive_verifier_returns_503_without_run_or_partial_bundle(monkeypatch, tmp_path):
+    from app import main
+
+    before = set(main.RUNS)
+
+    def unavailable(out, engine):
+        out.mkdir()
+        (out / "partial").write_text("synthetic partial output")
+        raise main.pipeline.VerifierError("OPA exceeded its execution deadline")
+
+    monkeypatch.setattr(main, "WORK", tmp_path)
+    monkeypatch.setattr(main.pipeline, "run", unavailable)
+    response = c.post("/api/runs")
+    assert response.status_code == 503
+    assert response.json()["detail"] == "Verifier inconclusive: OPA exceeded its execution deadline"
+    assert set(main.RUNS) == before
+    assert list(tmp_path.iterdir()) == []
 
 
 def test_token_required_when_configured(monkeypatch):

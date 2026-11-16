@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
 import pathlib
 import re
@@ -37,27 +38,77 @@ PKG = pathlib.Path(__file__).resolve().parent
 EX = ROOT / "examples/req-1042"
 REQ = "REQ-1042"
 TENANT = "acme-mfg"
+OPA_TIMEOUT_SECONDS = 30
 
 
-def opa_test(paths: list[pathlib.Path]) -> dict:
-    r = subprocess.run([gt.opa_bin(), "test", "-f", "json", *map(str, paths)], capture_output=True, text=True)
-    res = json.loads(r.stdout or "[]")
+class VerifierError(RuntimeError):
+    """The verifier could not establish a result; no bundle may be signed."""
+
+
+def _run_opa(args: list[str]) -> subprocess.CompletedProcess:
+    binary = gt.opa_bin()
+    if not binary:
+        raise VerifierError("OPA became unavailable during verification")
+    try:
+        return subprocess.run([binary, *args], capture_output=True, text=True,
+                              timeout=OPA_TIMEOUT_SECONDS)
+    except subprocess.TimeoutExpired as e:
+        raise VerifierError("OPA exceeded its execution deadline") from e
+    except OSError as e:
+        raise VerifierError("OPA could not be executed") from e
+
+
+def opa_test(paths: list[pathlib.Path], *, mutation: bool = False) -> dict:
+    r = _run_opa(["test", "-f", "json", *map(str, paths)])
+    if r.returncode != 0 and not (mutation and r.returncode == 2):
+        raise VerifierError("OPA test command failed")
+    try:
+        res = json.loads(r.stdout)
+    except (ValueError, TypeError) as e:
+        raise VerifierError("OPA returned empty or malformed test output") from e
+    if (not isinstance(res, list) or not res
+            or any(not isinstance(t, dict) or not isinstance(t.get("name"), str) or not t["name"]
+                   or ("error" in t and t["error"] is not None)
+                   or (t.get("skip") and t.get("fail"))
+                   or any(k in t and not isinstance(t[k], bool) for k in ("fail", "skip")) for t in res)):
+        raise VerifierError("OPA returned invalid or zero test results")
+    res = [t for t in res if not t.get("skip")]
+    if not res:
+        raise VerifierError("OPA ran zero tests")
     passed = sum(1 for t in res if not t.get("fail") and not t.get("error"))
     failed = sum(1 for t in res if t.get("fail"))
     errors = sum(1 for t in res if t.get("error"))
+    if errors or (r.returncode == 2 and not failed) or (r.returncode == 0 and failed):
+        raise VerifierError("OPA test results contain errors or an inconsistent exit status")
     return {"passed": passed, "failed": failed, "errors": errors,
             "failing_cases": [t["name"] for t in res if t.get("fail") or t.get("error")]}
+
+
+def opa_coverage(paths: list[pathlib.Path]) -> int:
+    r = _run_opa(["test", "--coverage", "-f", "json", *map(str, paths)])
+    if r.returncode != 0:
+        raise VerifierError("OPA coverage command failed")
+    try:
+        output = json.loads(r.stdout)
+        value = output["coverage"]
+        if type(value) not in (int, float) or not 0 <= value <= 100 or not math.isfinite(value):
+            raise ValueError("invalid coverage")
+    except (ValueError, TypeError, KeyError) as e:
+        raise VerifierError("OPA returned invalid coverage output") from e
+    return int(round(value * 100))
 
 
 def mutation_score(policy: pathlib.Path, tests: pathlib.Path) -> tuple[int, int]:
     """Delete each `violations contains` rule in turn; a mutant is killed if any test fails."""
     src = policy.read_text()
     blocks = list(re.finditer(r"^violations contains .*?(?:\n\}\n|\n(?=\n)|\n?\Z)", src, re.S | re.M))
+    if not blocks:
+        raise VerifierError("mutation analysis generated zero mutants")
     killed = 0
     for b in blocks:
         with tempfile.TemporaryDirectory() as d:
             (pathlib.Path(d) / "p.rego").write_text(src[: b.start()] + src[b.end():])
-            r = opa_test([pathlib.Path(d) / "p.rego", tests])
+            r = opa_test([pathlib.Path(d) / "p.rego", tests], mutation=True)
             killed += 1 if (r["failed"] or r["errors"]) else 0
     return killed, len(blocks)
 
@@ -169,15 +220,17 @@ def run(out: pathlib.Path, engine: str = "auto") -> dict:
         "min_coverage_bp": "9000", "min_mutation_bp": "8000"})
     if gt.opa_bin():
         res = opa_test([EX / "policy", EX / "tests"])
-        cov = subprocess.run([gt.opa_bin(), "test", "--coverage", "-f", "json", str(EX / "policy"), str(EX / "tests")],
-                             capture_output=True, text=True)
-        cov_bp = int(round(json.loads(cov.stdout)["coverage"] * 100))
+        cov_bp = opa_coverage([EX / "policy", EX / "tests"])
         killed, total = mutation_score(EX / "policy/ai_code_change.rego", EX / "tests/acceptance_test.rego")
         verifier_engine = "opa"
     else:  # runtime without OPA (e.g. a generated Fly.io image): replay the recorded, CI-checked result
         rec = json.loads((EX / "recorded_verifier.json").read_text())
         res, cov_bp, killed, total = rec["results"], rec["coverage_bp"], rec["mutation_killed"], rec["mutation_total"]
         verifier_engine = "recorded"
+    if (any(type(res.get(k)) is not int or res[k] < 0 for k in ("passed", "failed", "errors"))
+            or res["passed"] + res["failed"] + res["errors"] == 0
+            or type(total) is not int or total <= 0 or type(killed) is not int or not 0 <= killed <= total):
+        raise VerifierError("verifier requires nonzero tests and mutation cases")
     mut_bp = killed * 10000 // total
     events.append({"kind": "verify", "engine": verifier_engine, "passed": res["passed"], "failed": res["failed"],
                    "coverage_bp": cov_bp, "mutation": f"{killed}/{total}"})
@@ -331,7 +384,10 @@ def cli() -> None:
     ap.add_argument("--engine", default="auto", choices=["auto", "opa", "python"])
     ap.add_argument("--json", action="store_true", help="also write bundle.json next to the bundle")
     a = ap.parse_args()
-    r = run(pathlib.Path(a.out), a.engine)
+    try:
+        r = run(pathlib.Path(a.out), a.engine)
+    except VerifierError as e:
+        raise SystemExit(f"foundry-demo: verifier inconclusive: {e}") from e
     if a.json:
         pathlib.Path(a.out, "bundle.json").write_text(json.dumps(bundle_json(pathlib.Path(a.out))))
     print("\n".join(r.pop("log")))
