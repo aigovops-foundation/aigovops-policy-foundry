@@ -14,6 +14,6 @@ Fast facts:
 - Never add certification or conformance claims, secrets, or OT targets.
 - Anything public (deploys, releases) needs a human's approval first.
 - Persona docs: `docs/wiki/` is the human-written source; update it when behavior changes.
-- Devin skills: `foundry-build`, `foundry-deploy`, `foundry-gate-change`,
-  `foundry-verify-evidence`, `foundry-explain`, `foundry-wiki-update`.
+- Devin skills: `foundry-build`, `foundry-deploy`, `foundry-explain`, `foundry-gate-change`,
+  `foundry-native-app`, `foundry-verify-evidence`, `foundry-wiki-update`.
 - Review guidance: see [REVIEW.md](REVIEW.md).
