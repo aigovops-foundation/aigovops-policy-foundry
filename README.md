@@ -45,7 +45,7 @@ The dashboard works fully offline with bundled demo evidence. Open **Evidence**,
 
 - **Dashboard** (`web/`): React app with on-device verification. Same code runs in browsers and the native apps.
 - **API** (`api/`): FastAPI. Gate, approvals, demo pipeline runs, bundles (JSON and zip), server-side verification, dry-run Devin payloads. OpenAPI docs at `/docs`.
-- **Gate** (`api/foundry/assets/policy/`): Rego is authoritative. Python and TypeScript ports are held to OPA's answers by a 1,043-case parity corpus in CI.
+- **Gate** (`api/foundry/assets/policy/`): Rego is authoritative. Python and TypeScript ports are held to OPA's answers by a parity corpus of 1,015 decisions and 28 approval sets in CI.
 - **Evidence core**: RFC 8785 canonical JSON, Ed25519, keyed commitments, hash-chained receipts, RFC 6962 Merkle proofs, DSSE with two signatures.
 - **Native apps** (`apps/native/`): Tauri 2 shell for desktop and mobile.
 - **Deploy** (`deploy/`, `infra/`): container, Terraform for GCP, Azure and AWS, Kubernetes, Fly.io, and the PrivateLink design for Devin's Customer Dedicated Deployment.
@@ -56,8 +56,8 @@ The dashboard works fully offline with bundled demo evidence. Open **Evidence**,
 | Suite | Count |
 |---|---|
 | OPA policy tests | 25 |
-| Python (evidence, gate parity, API end to end, demo bundle) | 1,102 |
-| TypeScript (verifier on the Python-built bundle, gate parity) | 11 |
+| Python (evidence, gate parity, API end to end, demo bundle) | 1,255 |
+| TypeScript (verifier on the Python-built bundle, gate parity) | 88 |
 | Terraform validate | 4 configurations |
 | Container smoke test (build, run, pipeline, verify, offline verifier from zip) | CI |
 

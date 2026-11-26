@@ -9,7 +9,8 @@ Companion files:
   OVERT receipts, PrivateLink, signing, underwriting).
 - `docs/HOSTING.md` — every hosting option, step by step.
 - `.devin/blueprint.yaml` — your environment (OPA, Terraform, Rust, Node, Python).
-- `.agents/skills/` — `foundry-build`, `foundry-deploy`, `foundry-gate-change`, `foundry-native-app`.
+- `.agents/skills/` — `foundry-build`, `foundry-deploy`, `foundry-explain`, `foundry-gate-change`,
+  `foundry-native-app`, `foundry-verify-evidence`, `foundry-wiki-update`.
 
 ---
 
@@ -45,7 +46,7 @@ api/                      Python 3.11+ (FastAPI). Devin-deployable: app named `a
   foundry/verify_bundle.py Offline verifier (also copied into every bundle)
   foundry/devin_client.py Devin v3 adapter (dry-run by default)
   foundry/assets/         config/agents.yaml, policy/*.rego, prompts/, schemas/, examples/, parity/
-  tests/                  pytest: evidence, gate parity (1,043 cases), API e2e, demo bundle
+  tests/                  pytest: evidence, gate parity (1,015 decisions, 28 approval sets), API e2e, demo bundle
 web/                      React 19 + Vite dashboard. Offline demo + live API mode. Hash routing.
   src/lib/evidence.ts     Same verifier in TypeScript (on-device verification)
   src/lib/gate.ts         Same gate in TypeScript (parity-tested against OPA)
@@ -73,7 +74,7 @@ docs/                     BLUEPRINT.md, HOSTING.md, decisions/ (ADRs)
    making URLs public. Prepare everything, then stop and ask.
 8. **Foundation process:** bigger changes need an ADR in `docs/decisions/`; releases need
    Review Circle sign-off (`RELEASING.md`). Keep `main` green.
-9. **Report exact numbers.** "Passed 1,102 of 1,102", not "tests pass". Say what you could not run.
+9. **Report exact numbers.** "Passed 1,255 of 1,255", not "tests pass". Say what you could not run.
 
 ## 5. Current state (v0.1.0)
 
@@ -85,10 +86,13 @@ Done and tested in CI:
   Settings. Responsive (sidebar on desktop, bottom tabs on phones), light/dark, offline demo mode.
 - Container (multi-arch, non-root, read-only rootfs, checksum-verified OPA) and local scripts.
 - Terraform for Cloud Run, Azure Container Apps, ECS Fargate, and the PrivateLink design.
-- Tauri 2 config, icons for every platform, and a native build workflow.
+- Tauri 2 config, icons for every platform, and a native build workflow (`native.yml`) that
+  passes on all five targets: desktop on ubuntu-22.04, windows-latest and macos-latest, the
+  Android debug APK and the unsigned iOS simulator build (green on the runs for
+  [#30](https://github.com/aigovops-foundation/aigovops-policy-foundry/pull/30/checks) and
+  [#31](https://github.com/aigovops-foundation/aigovops-policy-foundry/pull/31/checks)).
 
 Not done yet (your backlog, in order — see §6):
-- First green run of the native workflow on all five platforms (desktop matrix, Android, iOS).
 - Accessibility pass with a real screen reader (VoiceOver, NVDA, TalkBack).
 - Persisting API URL/theme in the native apps (Tauri store plugin); the web build stays stateless.
 - A live, authenticated deployment on Google Cloud Run (default) after human approval.
@@ -101,8 +105,8 @@ Do the phases in order. Each ends with a PR, green CI, and a short report with e
 
 ### Phase 0 — Environment (one time)
 Sync `.devin/blueprint.yaml` (Settings > Environment > Blueprints > Sync). Start a session and run
-the `foundry-build` skill. Expect: 25/25 OPA tests, parity golden current, 1,102 pytest (OPA) and
-1,101 + 1 skipped (no OPA), 11 vitest, web build OK, container smoke test OK.
+the `foundry-build` skill. Expect: 25/25 OPA tests, parity golden current, 1,255 pytest (OPA) and
+1,254 + 1 skipped (no OPA), 88 vitest, web build OK, container smoke test OK.
 
 ### Phase 1 — Dashboard and API polish (web + api)
 Goal: simple and compelling UX on every screen size.
